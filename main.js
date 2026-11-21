@@ -46,6 +46,45 @@
     });
   }
 
+
+  /* ---- project cover lightbox ---- */
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbTitle = document.getElementById('lb-title');
+  const lbDesc = document.getElementById('lb-desc');
+  const lbLink = document.getElementById('lb-link');
+  let lastFocus = null;
+
+  const closeLb = () => {
+    if (!lb || lb.hidden) return;
+    lb.hidden = true;
+    document.body.classList.remove('no-scroll');
+    if (lastFocus) lastFocus.focus({ preventScroll: true });
+  };
+
+  if (lb) {
+    document.querySelectorAll('.thumb[data-image]').forEach((thumb) => {
+      thumb.addEventListener('click', () => {
+        lastFocus = thumb;
+        lbImg.src = thumb.dataset.image;
+        lbImg.alt = thumb.dataset.title + ' cover';
+        lbTitle.textContent = thumb.dataset.title;
+        lbDesc.textContent = thumb.dataset.desc;
+        lbLink.href = thumb.dataset.link;
+        lb.hidden = false;
+        document.body.classList.add('no-scroll');
+        const closeBtn = lb.querySelector('.lightbox__close');
+        if (closeBtn) closeBtn.focus({ preventScroll: true });
+      });
+    });
+    lb.addEventListener('click', (e) => {
+      if (e.target.closest('[data-close]')) closeLb();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLb();
+    });
+  }
+
   /* ---- year ---- */
   const year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());

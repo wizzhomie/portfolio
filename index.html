@@ -44,6 +44,7 @@
   <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><path d="M12 12h.01"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M21 15v6h-6M3 15v6h6"/></symbol>
   <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
 </svg>
 
@@ -156,33 +157,36 @@
 
     <ul class="projects__grid">
       <li>
-        <a class="project" href="https://github.com/wizzhomie" target="_blank" rel="noopener">
-          <div class="thumb thumb--shot thumb--clean" aria-hidden="true">
+        <article class="project">
+          <button class="thumb thumb--shot thumb--clean" type="button"
+              data-image="assets/projects/formacv-card.webp" data-title="FormaCV" data-desc="AI-powered resume builder &amp; analyzer" data-link="https://github.com/wizzhomie"
+              aria-label="View FormaCV cover larger">
             <img src="assets/projects/formacv-card.webp" alt="" width="1400" height="986" loading="lazy">
-          </div>
-          <h3>FormaCV</h3>
+            <span class="thumb__zoom" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-expand"/></svg></span>
+          </button>
+          <h3><a href="https://github.com/wizzhomie" target="_blank" rel="noopener">FormaCV</a></h3>
           <p class="project__desc">AI-powered resume builder &amp; analyzer</p>
-          <span class="project__arrow" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></span>
+          <a class="project__arrow" href="https://github.com/wizzhomie" target="_blank" rel="noopener" aria-label="Open FormaCV"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></a>
           <p class="project__tags">AI · Web · R&amp;D</p>
-        </a>
+        </article>
       </li>
-
       <li>
-        <a class="project" href="https://docflow.website" target="_blank" rel="noopener">
-          <div class="thumb thumb--shot thumb--clean" aria-hidden="true">
+        <article class="project">
+          <button class="thumb thumb--shot thumb--clean" type="button"
+              data-image="assets/projects/docflow-card.webp" data-title="DocFlow" data-desc="Intelligent document processing system" data-link="https://docflow.website"
+              aria-label="View DocFlow cover larger">
             <img src="assets/projects/docflow-card.webp" alt="" width="1400" height="986" loading="lazy">
-          </div>
-          <h3>DocFlow</h3>
+            <span class="thumb__zoom" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-expand"/></svg></span>
+          </button>
+          <h3><a href="https://docflow.website" target="_blank" rel="noopener">DocFlow</a></h3>
           <p class="project__desc">Intelligent document processing system</p>
-          <span class="project__arrow" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></span>
+          <a class="project__arrow" href="https://docflow.website" target="_blank" rel="noopener" aria-label="Open DocFlow"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></a>
           <p class="project__tags">AI · Automation</p>
-        </a>
+        </article>
       </li>
-
       <li>
-        <a class="project" href="https://github.com/wizzhomie" target="_blank" rel="noopener">
-          <div class="thumb thumb--guru" aria-hidden="true">
-            <svg class="scene" viewBox="0 0 320 210" preserveAspectRatio="xMidYMid slice">
+        <article class="project">
+          <div class="thumb thumb--guru" aria-hidden="true"><svg class="scene" viewBox="0 0 320 210" preserveAspectRatio="xMidYMid slice">
               <defs>
                 <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0" stop-color="#8fc0e8"/><stop offset=".45" stop-color="#f3c9ad"/><stop offset="1" stop-color="#f6dcc4"/>
@@ -210,26 +214,27 @@
                 <path d="M18 168c3-9 7-14 9-14s5 5 8 14Z"/><path d="M262 160c4-11 8-17 11-17s7 6 11 17Z"/>
               </g>
             </svg>
-            <span class="pin"><svg aria-hidden="true" class="ico"><use href="#i-pin"/></svg></span>
-            <span class="searchpill"><i></i><span></span><span></span></span>
-          </div>
-          <h3>GuruExplorer</h3>
+            <span class="pin" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-pin"/></svg></span>
+            <span class="searchpill" aria-hidden="true"><i></i><span></span></div>
+          <h3><a href="https://github.com/wizzhomie" target="_blank" rel="noopener">GuruExplorer</a></h3>
           <p class="project__desc">Smart travel discovery platform</p>
-          <span class="project__arrow" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></span>
+          <a class="project__arrow" href="https://github.com/wizzhomie" target="_blank" rel="noopener" aria-label="Open GuruExplorer"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></a>
           <p class="project__tags">Web · Product</p>
-        </a>
+        </article>
       </li>
-
       <li>
-        <a class="project" href="https://github.com/wizzhomie/marketeye" target="_blank" rel="noopener">
-          <div class="thumb thumb--shot thumb--zoom" aria-hidden="true">
-            <img src="assets/projects/marketeye.webp" alt="" width="900" height="634" loading="lazy">
-          </div>
-          <h3>MarketEye</h3>
+        <article class="project">
+          <button class="thumb thumb--shot thumb--zoom" type="button"
+              data-image="assets/projects/marketeye.webp" data-title="MarketEye" data-desc="Competitor price monitoring for distributors" data-link="https://github.com/wizzhomie/marketeye"
+              aria-label="View MarketEye cover larger">
+            <img src="assets/projects/marketeye.webp" alt="" width="1400" height="986" loading="lazy">
+            <span class="thumb__zoom" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-expand"/></svg></span>
+          </button>
+          <h3><a href="https://github.com/wizzhomie/marketeye" target="_blank" rel="noopener">MarketEye</a></h3>
           <p class="project__desc">Competitor price monitoring for distributors</p>
-          <span class="project__arrow" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></span>
+          <a class="project__arrow" href="https://github.com/wizzhomie/marketeye" target="_blank" rel="noopener" aria-label="Open MarketEye"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></a>
           <p class="project__tags">Web · Data · AI</p>
-        </a>
+        </article>
       </li>
     </ul>
   </section>
@@ -363,6 +368,26 @@
   <span class="foot__dot" aria-hidden="true"></span>
   <span>Design. Build. Scale.</span>
 </footer>
+
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
+  <div class="lightbox__backdrop" data-close></div>
+  <figure class="lightbox__panel">
+    <button class="lightbox__close" type="button" data-close aria-label="Close">
+      <svg aria-hidden="true" class="ico"><use href="#i-close"/></svg>
+    </button>
+    <img id="lb-img" src="" alt="">
+    <figcaption class="lightbox__caption">
+      <div>
+        <h3 id="lb-title"></h3>
+        <p id="lb-desc"></p>
+      </div>
+      <a class="lightbox__link" id="lb-link" href="#" target="_blank" rel="noopener">Open project
+        <svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg>
+      </a>
+    </figcaption>
+  </figure>
+</div>
 
 <script src="main.js" defer></script>
 </body>
