@@ -288,7 +288,7 @@ h1{
 .project:hover .project__arrow{background:#eef2ff;color:#0a0c14;border-color:#eef2ff}
 
 .thumb{
-  position:relative;aspect-ratio:1.42/1;border-radius:10px;overflow:hidden;
+  position:relative;aspect-ratio:4/3;border-radius:10px;overflow:hidden;
   border:1px solid rgba(255,255,255,.07);
   background:#0a0e1a;
   transform:translateZ(0);
@@ -378,8 +378,10 @@ h1{
 .thumb--shot{background:#0a0e18}
 .thumb--shot img{
   width:100%;height:100%;object-fit:cover;object-position:50% 34%;
-  display:block;transform:scale(1.22);transform-origin:50% 40%;
+  display:block;
 }
+.thumb--zoom img{transform:scale(1.12);transform-origin:50% 42%}
+.thumb--clean::before{display:none}
 .thumb--shot::before{
   content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(180deg,rgba(4,6,14,0) 55%,rgba(4,6,14,.55) 100%);
@@ -636,7 +638,7 @@ h1{
   .hero__tagline{font-size:20px}
   .projects__grid{grid-template-columns:1fr}
   .project{padding:10px 10px 14px}
-  .thumb{aspect-ratio:1.55/1}
+  .thumb{aspect-ratio:4/3}
   .project h3{font-size:16px;margin-top:13px}
   .project__desc{font-size:12.5px;margin-right:36px}
   .project__tags{margin-top:14px}
