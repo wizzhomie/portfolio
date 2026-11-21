@@ -47,6 +47,29 @@
   }
 
 
+  /* ---- tech stack: name readout on hover ---- */
+  const stackGrid = document.querySelector('.stack__grid');
+  const stackReadout = document.querySelector('.stack__readout');
+  if (stackGrid && stackReadout) {
+    const show = (name) => {
+      stackReadout.textContent = name;
+      stackReadout.classList.add('is-on');
+    };
+    const hide = () => stackReadout.classList.remove('is-on');
+
+    stackGrid.addEventListener('pointerover', (e) => {
+      const item = e.target.closest ? e.target.closest('li[data-name]') : null;
+      if (item) show(item.dataset.name);
+    });
+    /* a mouse leaving the grid hides the name; a finger tap keeps it on screen */
+    stackGrid.addEventListener('pointerleave', (e) => {
+      if (e.pointerType !== 'touch') hide();
+    });
+    document.addEventListener('pointerdown', (e) => {
+      if (!e.target.closest || !e.target.closest('.stack__grid')) hide();
+    });
+  }
+
   /* ---- year ---- */
   const year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
