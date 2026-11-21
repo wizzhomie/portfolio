@@ -299,7 +299,7 @@ h1{
   content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),inset 0 -24px 40px -24px rgba(0,0,0,.8);
 }
-.project:hover .thumb > img,.project:hover .thumb > svg.scene{transform:scale(1.025)}
+.project:hover .thumb > img{filter:brightness(1.06)}
 .thumb > img,.thumb > svg.scene{transition:transform .6s var(--ease-out)}
 
 /* FormaCV mini app */
@@ -379,7 +379,7 @@ h1{
 /* real product screenshots */
 .thumb--shot{background:#0a0e18}
 .thumb--shot img{
-  width:100%;height:100%;object-fit:cover;object-position:50% 34%;
+  width:100%;height:100%;object-fit:cover;object-position:50% 50%;
   display:block;
 }
 button.thumb{padding:0;font:inherit;text-align:left;cursor:zoom-in}
@@ -393,7 +393,7 @@ button.thumb{padding:0;font:inherit;text-align:left;cursor:zoom-in}
 .thumb__zoom .ico{width:13px;height:13px;stroke-width:1.8}
 .thumb:hover .thumb__zoom,.thumb:focus-visible .thumb__zoom{opacity:1;transform:none}
 @media (hover:none){.thumb__zoom{opacity:.75;transform:none}}
-.thumb--zoom img{transform:scale(1.12);transform-origin:50% 42%}
+
 .thumb--clean::before{display:none}
 .thumb--shot::before{
   content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
