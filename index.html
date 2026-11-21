@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexander Polyakov — AI Systems Engineering</title>
+<meta name="description" content="AI systems engineering portfolio: architecture, agents, LLM engineering and product delivery. Design. Build. Scale.">
+<meta name="theme-color" content="#04050a">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Alexander Polyakov — AI Systems Engineering">
+<meta property="og:description" content="Architecting intelligent products with AI at the core.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/Inter.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#projects">Skip to projects</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="brand-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8fb0ff"/>
+      <stop offset=".5" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#6d5bf5"/>
+    </linearGradient>
+  </defs>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2.5"/><rect x="10" y="10" width="4" height="4" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></symbol>
+  <symbol id="i-robot" viewBox="0 0 24 24"><rect x="4.5" y="8" width="15" height="11" rx="3.5"/><path d="M12 8V5"/><circle cx="12" cy="4" r="1.2"/><circle cx="9" cy="13" r="1.2"/><circle cx="15" cy="13" r="1.2"/><path d="M9.5 16.5h5"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path d="m12 2.8 8 4.6v9.2l-8 4.6-8-4.6V7.4l8-4.6Z"/><path d="m4 7.4 8 4.6 8-4.6M12 12v9.2"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m8.5 7.5-5 4.5 5 4.5M15.5 7.5l5 4.5-5 4.5"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7.2 18.5h9.6a4.2 4.2 0 0 0 .5-8.37A5.6 5.6 0 0 0 6.6 9.6a4.55 4.55 0 0 0 .6 8.9Z"/></symbol>
+  <symbol id="i-bars" viewBox="0 0 24 24"><path d="M4.5 20V13M12 20V5.5M19.5 20v-9.5"/></symbol>
+  <symbol id="i-pie" viewBox="0 0 24 24"><path d="M21 12A9 9 0 1 1 12 3v9h9Z"/><path d="M16.5 3.6A9 9 0 0 1 20.4 7.5"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3.2c.55 4.6 4.2 8.25 8.8 8.8-4.6.55-8.25 4.2-8.8 8.8-.55-4.6-4.2-8.25-8.8-8.8 4.6-.55 8.25-4.2 8.8-8.8Z"/></symbol>
+  <symbol id="i-diamond" viewBox="0 0 24 24"><path d="M7.5 3.5h9l4.5 5.5-9 11.5L3 9l4.5-5.5Z"/><path d="M3 9h18M12 20.5 8.5 9l2.5-5.5M12 20.5 15.5 9 13 3.5"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.2 2.5 4.5 13.4h6.1l-1.4 8.1 9.3-11.2h-6.2l.9-7.8Z"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><path d="M12 12h.01"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+
+<main class="bento">
+
+  <!-- ================= HERO ================= -->
+  <section class="card hero" id="top">
+    <div class="hero__art" aria-hidden="true">
+      <img class="hero__ribbon" src="assets/ribbon.png" alt="" width="1400" height="1150" decoding="async">
+      <div class="hero__bloom"></div>
+    </div>
+
+    <header class="nav">
+      <a class="brand" href="#top" aria-label="Alexander Polyakov — home">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M9.5 32.5C11.6 22 15.4 12.6 20.2 7.2" stroke="url(#brand-grad)" stroke-width="5.2" stroke-linecap="round" fill="none"/>
+          <path d="M20.2 7.2c4.6 5 8.3 13.7 10.3 25.3" stroke="url(#brand-grad)" stroke-width="5.2" stroke-linecap="round" fill="none"/>
+          <path d="M14.6 24.6c3.4-1.3 7-1.5 10.6-.4" stroke="url(#brand-grad)" stroke-width="4.2" stroke-linecap="round" fill="none"/>
+        </svg>
+      </a>
+
+      <nav class="nav__links" id="menu" aria-label="Primary">
+        <a href="#top">Portfolio</a>
+        <a href="#projects">Projects</a>
+        <a href="#stack">Stack</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <a class="nav__gh" href="https://github.com/wizzhomie" target="_blank" rel="noopener">
+        <svg class="ico ico--solid" aria-hidden="true"><use href="#i-github"/></svg>
+        <span>GitHub</span>
+        <svg class="ico ico--arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+        <svg class="ico ico--menu" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="ico ico--close" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </header>
+
+    <div class="hero__content">
+      <h1>AI Systems<br>Engineering</h1>
+      <p class="hero__tagline">Design.&nbsp;Build. <span>Scale.</span></p>
+      <div class="hero__lead">
+        <span class="hero__rule" aria-hidden="true"></span>
+        <p>Architecting intelligent products <br>with AI at the core.</p>
+      </div>
+      <a class="btn" href="#projects">
+        <span>View Projects</span>
+        <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= EXPERTISE ================= -->
+  <section class="card expertise reveal" id="expertise">
+    <div class="section-head">
+      <h2>Expertise</h2>
+      <p class="sub">Full-cycle approach from idea to scalable product.</p>
+    </div>
+    <ul class="tiles">
+      <li class="tile">
+        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-chip"/></svg></span>
+        <span class="tile__label">AI Systems<br>Architecture</span>
+      </li>
+      <li class="tile">
+        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-robot"/></svg></span>
+        <span class="tile__label">AI Agents &amp;<br>Multi-Agent Systems</span>
+      </li>
+      <li class="tile">
+        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-cube"/></svg></span>
+        <span class="tile__label">LLM Engineering<br>&amp; Fine-tuning</span>
+      </li>
+      <li class="tile">
+        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-code"/></svg></span>
+        <span class="tile__label">AI-Assisted<br>Development</span>
+      </li>
+      <li class="tile">
+        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-cloud"/></svg></span>
+        <span class="tile__label">Backend &amp;<br>Infrastructure</span>
+      </li>
+      <li class="tile">
+        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-bars"/></svg></span>
+        <span class="tile__label">Product<br>Engineering</span>
+      </li>
+      <li class="tile">
+        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-pie"/></svg></span>
+        <span class="tile__label">R&amp;D &amp; Evaluation</span>
+      </li>
+      <li class="tile">
+        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-sparkle"/></svg></span>
+        <span class="tile__label">Business<br>&amp; Marketing</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="card projects reveal" id="projects">
+    <div class="card__head">
+      <div class="section-head">
+        <h2>Selected Projects</h2>
+        <p class="sub">Real solutions. Measurable impact.</p>
+      </div>
+      <a class="link" href="https://github.com/wizzhomie" target="_blank" rel="noopener">
+        Explore all <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+
+    <ul class="projects__grid">
+      <li>
+        <a class="project" href="https://github.com/wizzhomie" target="_blank" rel="noopener">
+          <div class="thumb thumb--cv" aria-hidden="true">
+            <div class="mini">
+              <div class="mini__bar"><i></i><i></i><i></i></div>
+              <div class="mini__body">
+                <div class="mini__side">
+                  <span class="mini__badge">F</span>
+                  <i style="width:70%"></i><i style="width:55%"></i><i style="width:62%"></i>
+                </div>
+                <div class="mini__main">
+                  <b></b>
+                  <i style="width:88%"></i><i style="width:70%"></i>
+                  <div class="mini__row"><span></span><span></span><span></span></div>
+                  <i style="width:46%" class="mini__btn"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3>FormaCV</h3>
+          <p class="project__desc">AI-powered resume builder &amp; analyzer</p>
+          <span class="project__arrow" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></span>
+          <p class="project__tags">AI · Web · R&amp;D</p>
+        </a>
+      </li>
+
+      <li>
+        <a class="project" href="https://github.com/wizzhomie" target="_blank" rel="noopener">
+          <div class="thumb thumb--doc" aria-hidden="true">
+            <div class="docpanel">
+              <i style="width:62%"></i><i style="width:44%"></i>
+              <span class="docpanel__row"></span>
+              <span class="docpanel__row"></span>
+              <i style="width:52%"></i>
+            </div>
+            <div class="paper">
+              <span class="paper__dot"></span>
+              <i style="width:78%;height:4px"></i>
+              <i style="width:92%"></i>
+              <i style="width:84%"></i>
+              <i style="width:60%"></i>
+              <span class="paper__rule"></span>
+              <i style="width:70%"></i>
+              <i style="width:48%" class="paper__accent"></i>
+            </div>
+            <div class="doctag">.pdf</div>
+          </div>
+          <h3>DocFlow</h3>
+          <p class="project__desc">Intelligent document processing system</p>
+          <span class="project__arrow" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></span>
+          <p class="project__tags">AI · Automation</p>
+        </a>
+      </li>
+
+      <li>
+        <a class="project" href="https://github.com/wizzhomie" target="_blank" rel="noopener">
+          <div class="thumb thumb--guru" aria-hidden="true">
+            <svg class="scene" viewBox="0 0 320 210" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#8fc0e8"/><stop offset=".45" stop-color="#f3c9ad"/><stop offset="1" stop-color="#f6dcc4"/>
+                </linearGradient>
+                <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#8fb6cf"/><stop offset=".55" stop-color="#5c7f9d"/><stop offset="1" stop-color="#31465e"/>
+                </linearGradient>
+                <linearGradient id="mtn1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d8fa8"/><stop offset="1" stop-color="#5a6a83"/></linearGradient>
+                <linearGradient id="mtn2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b5a70"/><stop offset="1" stop-color="#334154"/></linearGradient>
+                <linearGradient id="mtn3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b3646"/><stop offset="1" stop-color="#1b2430"/></linearGradient>
+                <radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffe9c9" stop-opacity=".95"/><stop offset="1" stop-color="#ffd9a8" stop-opacity="0"/></radialGradient>
+              </defs>
+              <rect width="320" height="210" fill="url(#sky)"/>
+              <circle cx="238" cy="66" r="58" fill="url(#sun)"/>
+              <path d="M0 128 62 62l28 26 34-40 40 46 30-22 58 56 28-18 40 34v14H0Z" fill="url(#mtn1)"/>
+              <path d="M0 146 54 96l30 22 40-30 44 36 36-14 52 40 30-16 34 26v18H0Z" fill="url(#mtn2)"/>
+              <path d="m62 62 14 13 14-13 12 10 12-10 12 11-24 20-12-9-12 9Z" fill="#eef2f7" opacity=".85"/>
+              <path d="M0 160c46-14 82 6 118 2 42-5 66-16 108-10 40 6 62 18 94 14v44H0Z" fill="url(#lake)"/>
+              <g opacity=".5" stroke="#dfeaf5" stroke-linecap="round">
+                <path d="M36 176h44M96 186h58M170 178h52M232 190h50M60 196h30" stroke-width="1.4" opacity=".5"/>
+              </g>
+              <path d="M0 160c52-10 96 4 140 0 44-4 74-12 112-8 26 2 46 8 68 12v12c-30-2-56-8-82-8-44 0-72 10-116 10-42 0-78-8-122 2Z" fill="#16202b" opacity=".55"/>
+              <path d="M0 206c30-14 54-6 78-14 22-7 30-16 52-14 20 2 30 12 46 12 22 0 34-10 54-6 24 4 40 16 90 12v14H0Z" fill="url(#mtn3)"/>
+              <g fill="#0f1721" opacity=".9">
+                <path d="M18 168c3-9 7-14 9-14s5 5 8 14Z"/><path d="M262 160c4-11 8-17 11-17s7 6 11 17Z"/>
+              </g>
+            </svg>
+            <span class="pin"><svg aria-hidden="true" class="ico"><use href="#i-pin"/></svg></span>
+            <span class="searchpill"><i></i><span></span><span></span></span>
+          </div>
+          <h3>GuruExplorer</h3>
+          <p class="project__desc">Smart travel discovery platform</p>
+          <span class="project__arrow" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></span>
+          <p class="project__tags">Web · Product</p>
+        </a>
+      </li>
+
+      <li>
+        <a class="project" href="https://github.com/wizzhomie" target="_blank" rel="noopener">
+          <div class="thumb thumb--resolvary" aria-hidden="true">
+            <svg class="scene" viewBox="0 0 320 210" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="rslv-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#120a2c"/><stop offset="1" stop-color="#1b0f45"/></linearGradient>
+                <linearGradient id="w1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7b52ff" stop-opacity=".95"/><stop offset="1" stop-color="#2b1a80" stop-opacity=".2"/></linearGradient>
+                <linearGradient id="w2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4c2ed6" stop-opacity=".85"/><stop offset="1" stop-color="#b28cff" stop-opacity=".35"/></linearGradient>
+                <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
+                <filter id="softer" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="18"/></filter>
+              </defs>
+              <rect width="320" height="210" fill="url(#rslv-bg)"/>
+              <g filter="url(#softer)" opacity=".85">
+                <path d="M-20 150c60-52 96 22 150-8s86-70 140-44 70 12 90 2v130H-20Z" fill="#3a20a0"/>
+              </g>
+              <g filter="url(#soft)">
+                <path d="M-10 170c54-40 92 10 140-12s80-58 130-40 60 22 80 16v90H-10Z" fill="url(#w1)"/>
+                <path d="M-10 168c54-40 92 10 140-12s80-58 130-40 60 22 80 16" fill="none" stroke="rgba(210,190,255,.45)" stroke-width="1.4"/>
+                <path d="M-10 196c50-46 96-8 150-38s96-42 140-22 52 18 60 12v72H-10Z" fill="url(#w2)"/>
+                <path d="M10 60c40-26 70 6 108-18s70-24 96-6 50 10 66 2v40c-26 12-48 2-76-8s-62 0-98 18-64 6-96 4Z" fill="#8a63ff" opacity=".38"/>
+              </g>
+            </svg>
+          </div>
+          <h3>Resolvary</h3>
+          <p class="project__desc">Productivity &amp; task management tool</p>
+          <span class="project__arrow" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></span>
+          <p class="project__tags">Product · UX</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= ARCHITECTURE ================= -->
+  <section class="card arch reveal" id="architecture">
+    <div class="section-head">
+      <h2>Architecture in Action</h2>
+      <p class="sub">Multi-agent system for intelligent document processing.</p>
+    </div>
+
+    <div class="arch__flow">
+      <ul class="arch__inputs">
+        <li>PDF / DOCX</li>
+        <li>Images</li>
+        <li>Scans</li>
+        <li class="is-other">Other</li>
+      </ul>
+
+      <div class="arch__arrows arch__arrows--in" aria-hidden="true">
+        <svg viewBox="0 0 28 12"><path d="M1 6h22m-5-5 6 5-6 5"/></svg>
+        <svg viewBox="0 0 28 12"><path d="M1 6h22m-5-5 6 5-6 5"/></svg>
+        <svg viewBox="0 0 28 12"><path d="M1 6h22m-5-5 6 5-6 5"/></svg>
+      </div>
+
+      <div class="pipeline">
+        <svg class="pipeline__icon ico" aria-hidden="true"><use href="#i-robot"/></svg>
+        <span>Multi-Agent<br>Pipeline</span>
+      </div>
+
+      <div class="arch__arrows arch__arrows--out" aria-hidden="true">
+        <svg viewBox="0 0 28 12"><path d="M1 6h22m-5-5 6 5-6 5"/></svg>
+        <svg viewBox="0 0 28 12"><path d="M1 6h22m-5-5 6 5-6 5"/></svg>
+        <svg viewBox="0 0 28 12"><path d="M1 6h22m-5-5 6 5-6 5"/></svg>
+        <svg viewBox="0 0 28 12"><path d="M1 6h22m-5-5 6 5-6 5"/></svg>
+      </div>
+
+      <ul class="arch__steps">
+        <li>Analyze</li>
+        <li>Extract</li>
+        <li>Validate</li>
+        <li>Structure</li>
+      </ul>
+
+      <svg class="arch__brace" viewBox="0 0 44 220" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M2 2c14 0 14 104 26 108-12 4-12 108-26 108M28 110h14"/>
+      </svg>
+
+      <div class="arch__out">
+        <span class="arch__check"><svg aria-hidden="true" class="ico"><use href="#i-check"/></svg></span>
+        <span>High-Quality <br>Output</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STACK ================= -->
+  <section class="card stack reveal" id="stack">
+    <div class="section-head">
+      <h2>Tech Stack</h2>
+      <p class="sub">Modern tools for ambitious ideas.</p>
+    </div>
+    <ul class="stack__grid">
+      <li><img src="assets/logos/python.svg" alt="Python" width="30" height="30" loading="lazy"></li>
+      <li><img src="assets/logos/typescript.svg" alt="TypeScript" width="30" height="30" loading="lazy"></li>
+      <li><img src="assets/logos/react.svg" alt="React" width="30" height="30" loading="lazy"></li>
+      <li><img src="assets/logos/nodedotjs.svg" alt="Node.js" width="30" height="30" loading="lazy"></li>
+      <li><img src="assets/logos/docker.svg" alt="Docker" width="30" height="30" loading="lazy"></li>
+      <li><img src="assets/logos/linux.svg" alt="Linux" width="30" height="30" loading="lazy"></li>
+      <li><img src="assets/logos/github.svg" alt="GitHub" width="30" height="30" loading="lazy"></li>
+      <li><img src="assets/logos/postgresql.svg" alt="PostgreSQL" width="30" height="30" loading="lazy"></li>
+      <li><img src="assets/logos/cloudflare.svg" alt="Cloudflare" width="30" height="30" loading="lazy"></li>
+      <li><img src="assets/logos/ollama.svg" alt="Ollama" width="30" height="30" loading="lazy"></li>
+    </ul>
+  </section>
+
+  <!-- ================= PRINCIPLES ================= -->
+  <section class="card principles reveal" id="principles">
+    <div class="section-head">
+      <h2>Principles</h2>
+      <p class="sub">Build with purpose.</p>
+    </div>
+    <ul class="principles__grid">
+      <li>
+        <span class="principles__icon"><svg aria-hidden="true" class="ico"><use href="#i-diamond"/></svg></span>
+        <span>System<br>Thinking</span>
+      </li>
+      <li>
+        <span class="principles__icon"><svg aria-hidden="true" class="ico"><use href="#i-bolt"/></svg></span>
+        <span>Iterative<br>Development</span>
+      </li>
+      <li>
+        <span class="principles__icon"><svg aria-hidden="true" class="ico"><use href="#i-bars"/></svg></span>
+        <span>Product<br>Focus</span>
+      </li>
+      <li>
+        <span class="principles__icon"><svg aria-hidden="true" class="ico"><use href="#i-target"/></svg></span>
+        <span>Long-Term<br>Impact</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="card cta reveal" id="about">
+    <div class="cta__planet" aria-hidden="true">
+      <img src="assets/earth.jpg" alt="" loading="lazy" width="1280" height="1281">
+    </div>
+
+    <div class="cta__head">
+      <h2>Let&rsquo;s Build<br>What&rsquo;s Next.</h2>
+      <a class="cta__btn" href="mailto:a.polyakoff07@gmail.com" aria-label="Email me">
+        <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+
+    <div class="cta__contacts">
+      <a href="mailto:a.polyakoff07@gmail.com">
+        <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
+        <span>a.polyakoff07@gmail.com</span>
+      </a>
+      <span class="cta__sep" aria-hidden="true"></span>
+      <a href="https://github.com/wizzhomie" target="_blank" rel="noopener">
+        <svg class="ico ico--solid" aria-hidden="true"><use href="#i-github"/></svg>
+        <span>github.com/wizzhomie</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>© <span id="year">2026</span> Alexander Polyakov</span>
+  <span class="foot__dot" aria-hidden="true"></span>
+  <span>Design. Build. Scale.</span>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
