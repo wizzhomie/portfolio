@@ -1,5 +1,8 @@
 # AI Systems Engineering — portfolio page
 
+**Живая версия:** https://wizzhomie.github.io/portfolio/ (GitHub Pages, ветка `main`).
+Обновление: закоммитить и запушить в `github.com/wizzhomie/portfolio` — Pages пересоберётся сам.
+
 Одностраничный сайт-портфолио по макету: тёмная bento-сетка, стеклянная лента в hero,
 восемь плиток экспертизы, четыре проекта, схема пайплайна, стек, принципы и финальный блок с CTA.
 
