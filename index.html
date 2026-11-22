@@ -4,154 +4,76 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alexander Polyakov — AI Systems Architect</title>
-<meta name="description" content="AI systems architect. I design the structure an AI product needs: where models decide, where code guarantees, and where a human signs off.">
+<meta name="description" content="AI systems architect. Where a model decides, where code guarantees, and where a person signs off — that split is the product.">
 <meta name="author" content="Alexander Polyakov">
-<meta name="theme-color" content="#151515">
+<meta name="theme-color" content="#04050a">
 <meta name="color-scheme" content="dark">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Alexander Polyakov — AI Systems Architect">
-<meta property="og:description" content="I don't write prompts. I design systems.">
+<meta property="og:description" content="I don’t write prompts. I design systems.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/Inter.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="pixel-kit.css">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
-<a class="skip" href="#projects">Skip to projects</a>
+<a class="skip" href="#projects">Skip to work</a>
 
-<header class="topbar">
-  <a class="brand" href="#top" aria-label="Alexander Polyakov, home">
-    <span class="brand__mark" aria-hidden="true"></span>
-    <span class="brand__text">
-      <b>Alexander Polyakov</b>
-      <i>AI systems architect</i>
-    </span>
-  </a>
+<!-- ============ HERO ============ -->
+<header class="hero" data-px="field">
+  <div class="wrap hero-grid">
+    <div class="hero__text">
+      <p class="eyebrow">// ai systems architect</p>
+      <h1>
+        <span class="line">I don’t write prompts.</span>
+        <span class="line line--accent">I design systems.</span>
+      </h1>
+      <div class="tag"><span data-px="typewriter" data-phrases="Architecture.|Agents.|Automation."></span></div>
+      <p class="sub">Where a model decides, where code guarantees, where a person signs off.</p>
+      <a class="px-btn" href="#projects">View work</a>
+    </div>
 
-  <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
-    <span aria-hidden="true"></span><span aria-hidden="true"></span>
-  </button>
-
-  <nav class="nav" id="menu" aria-label="Sections">
-    <a href="#expertise">Expertise</a>
-    <a href="#projects">Work</a>
-    <a href="#architecture">Method</a>
-    <a href="#stack">Stack</a>
-    <a class="nav__mail" href="mailto:a.polyakoff07@gmail.com">Write</a>
-  </nav>
+    <div class="hero__visual">
+      <div class="px-frame" data-label="planet.live">
+        <canvas data-px="planet" role="img" aria-label="Pixel planet with three agents orbiting it"></canvas>
+      </div>
+    </div>
+  </div>
 </header>
 
-<main id="top">
+<main class="wrap">
 
-  <!-- ================= HERO ================= -->
-  <section class="hero" data-px="field">
-    <div class="hero__glow" aria-hidden="true"></div>
-    <div class="page hero__inner">
-      <div class="hero__text">
-        <p class="eyebrow">AI systems architect</p>
-        <h1>
-          <span class="line">I don’t write prompts.</span>
-          <span class="line line--accent">I design systems.</span>
-        </h1>
-        <p class="hero__tag"><span data-px="typewriter" data-phrases="Architecture.|Agents.|Automation."></span></p>
-        <p class="lede">
-          Where a model decides, where code guarantees, and where a person signs off — that
-          split is the product. I define it, decompose the work across agents, and verify the
-          result until it behaves the same on the hundredth document as on the first.
-        </p>
-        <div class="actions">
-          <a class="px-btn" href="#projects">View selected work</a>
-          <a class="px-btn px-btn--ghost" href="mailto:a.polyakoff07@gmail.com">Start a project</a>
-        </div>
-      </div>
-      <div class="hero__visual">
-        <div class="px-frame" data-label="pipeline.live">
-          <canvas data-px="pipeline" role="img" aria-label="Pixel animation: documents move through analyse, extract and validate agents and come out as structured records"></canvas>
-        </div>
-      </div>
-      <ul class="meta">
-        <li><span>Based in</span>Kyiv · remote</li>
-        <li><span>Focus</span>Architecture · agents · automation</li>
-        <li><span>Status</span>Open to projects</li>
-      </ul>
+  <div class="px-divider" role="presentation"></div>
+
+  <!-- ============ EXPERTISE ============ -->
+  <section class="reveal" id="expertise">
+    <h2>Expertise</h2>
+    <div class="grid8">
+      <div class="px-card"><span class="px-icon" data-px-icon="arch" aria-hidden="true"></span><h3>System architecture</h3><p>Boundaries, contracts, failure paths.</p></div>
+      <div class="px-card"><span class="px-icon" data-px-icon="agent" aria-hidden="true"></span><h3>Multi-agent delivery</h3><p>One plan, one job per agent, gates I keep.</p></div>
+      <div class="px-card"><span class="px-icon" data-px-icon="llm" aria-hidden="true"></span><h3>LLM engineering</h3><p>Schemas, eval sets, cost per document.</p></div>
+      <div class="px-card"><span class="px-icon" data-px-icon="product" aria-hidden="true"></span><h3>Design &amp; interface</h3><p>Layout, type, states, motion.</p></div>
+      <div class="px-card"><span class="px-icon" data-px-icon="biz" aria-hidden="true"></span><h3>Business logic</h3><p>Routing, approvals, pricing, CRM.</p></div>
+      <div class="px-card"><span class="px-icon" data-px-icon="backend" aria-hidden="true"></span><h3>Backend &amp; infra</h3><p>Python, Postgres, queues, Linux.</p></div>
+      <div class="px-card"><span class="px-icon" data-px-icon="dev" aria-hidden="true"></span><h3>AI-assisted build</h3><p>Ship faster with agents on a plan.</p></div>
+      <div class="px-card"><span class="px-icon" data-px-icon="rnd" aria-hidden="true"></span><h3>R&amp;D &amp; evaluation</h3><p>Measure before you believe.</p></div>
     </div>
   </section>
 
-  <!-- ================= EXPERTISE ================= -->
-  <section class="page band reveal" id="expertise">
-    <div class="band__head">
-      <h2>What I actually do</h2>
-      <p class="sub">System level first, then everything around it — including the interface and the business rules.</p>
-    </div>
+  <div class="px-divider" role="presentation"></div>
 
-    <ul class="grid grid--4">
-      <li class="card px-card">
-        <span class="px-icon" data-px-icon="arch" aria-hidden="true"></span>
-        <span class="num">.01</span>
-        <h3>System architecture</h3>
-        <p>Boundaries, contracts and failure paths. Where the model thinks, where code decides, what happens when the confidence drops.</p>
-      </li>
-      <li class="card px-card">
-        <span class="px-icon" data-px-icon="agent" aria-hidden="true"></span>
-        <span class="num">.02</span>
-        <h3>Multi-agent delivery</h3>
-        <p>Research, build, review and QA agents on one plan, each with one job and a definition of done. I direct them and keep the gates.</p>
-      </li>
-      <li class="card px-card">
-        <span class="px-icon" data-px-icon="dev" aria-hidden="true"></span>
-        <span class="num">.03</span>
-        <h3>Document AI</h3>
-        <p>Thousands of Word templates, unseen layouts, structured output. The FormaCV problem, solved once as a pattern.</p>
-      </li>
-      <li class="card px-card">
-        <span class="px-icon" data-px-icon="llm" aria-hidden="true"></span>
-        <span class="num">.04</span>
-        <h3>LLM engineering</h3>
-        <p>Extraction and classification with schemas, evaluation sets and a cost per document — not a prompt that worked once.</p>
-      </li>
-      <li class="card px-card">
-        <span class="px-icon" data-px-icon="product" aria-hidden="true"></span>
-        <span class="num">.05</span>
-        <h3>Interface &amp; motion</h3>
-        <p>Layout, typography, states and animation. I design the screen as part of the system, not as decoration after it.</p>
-      </li>
-      <li class="card px-card">
-        <span class="px-icon" data-px-icon="biz" aria-hidden="true"></span>
-        <span class="num">.06</span>
-        <h3>Business logic</h3>
-        <p>Routing rules, approvals, pricing, CRM contracts — and a media-buying background, so the process is not a mystery.</p>
-      </li>
-      <li class="card px-card">
-        <span class="px-icon" data-px-icon="backend" aria-hidden="true"></span>
-        <span class="num">.07</span>
-        <h3>Backend &amp; infrastructure</h3>
-        <p>Python, FastAPI, Postgres, queues, Docker, Linux. The parts that must never be clever.</p>
-      </li>
-      <li class="card px-card">
-        <span class="px-icon" data-px-icon="rnd" aria-hidden="true"></span>
-        <span class="num">.08</span>
-        <h3>R&amp;D &amp; evaluation</h3>
-        <p>Proof before scale: benchmarks, regression suites, and root causes instead of another stack of patches.</p>
-      </li>
-    </ul>
-  </section>
-
-  <!-- ================= PROJECTS ================= -->
-  <section class="page band reveal" id="projects">
-    <div class="band__head">
-      <h2>Selected work</h2>
-      <p class="sub">Four products, four different problems. In each one the interesting part was the structure.</p>
-    </div>
-
+  <!-- ============ PROJECTS ============ -->
+  <section class="reveal" id="projects">
+    <h2>Selected work</h2>
     <div class="projects">
       <a class="project px-card" href="https://formacv.ai" target="_blank" rel="noopener">
         <span class="project__tag">R&amp;D lead</span>
         <h3>FormaCV</h3>
-        <p>An AI document engine for recruiting agencies: an agency uploads its Word sample, the system extracts the structure, and candidate resumes come out in the agency’s own format.</p>
+        <p>An agency uploads its Word template once; candidate resumes come out in that format.</p>
         <ul class="project__tags"><li>Document AI</li><li>Multi-agent QA</li><li>SaaS</li></ul>
         <span class="project__arrow" aria-hidden="true">↗</span>
       </a>
@@ -159,7 +81,7 @@
       <a class="project px-card" href="https://docflow.website" target="_blank" rel="noopener">
         <span class="project__tag">Architect</span>
         <h3>DocFlow</h3>
-        <p>Document intake for a business: invoices, acts and scans arrive from a mailbox or a camera, get read whole, confirmed once, and land in the CRM as deals.</p>
+        <p>Invoices and scans arrive, get read whole, confirmed once, and land in the CRM.</p>
         <ul class="project__tags"><li>Automation</li><li>Python</li><li>CRM</li></ul>
         <span class="project__arrow" aria-hidden="true">↗</span>
       </a>
@@ -167,7 +89,7 @@
       <a class="project px-card" href="https://www.guruexplorer.co" target="_blank" rel="noopener">
         <span class="project__tag">Product</span>
         <h3>GuruExplorer</h3>
-        <p>A trust-first tutor marketplace for Singapore: verified profiles, transparent reviews, and a booking flow that survives real parents.</p>
+        <p>A trust-first tutor marketplace: verified profiles, transparent reviews, real bookings.</p>
         <ul class="project__tags"><li>Marketplace</li><li>Web</li><li>UX</li></ul>
         <span class="project__arrow" aria-hidden="true">↗</span>
       </a>
@@ -175,26 +97,22 @@
       <a class="project px-card" href="https://resolvary.com" target="_blank" rel="noopener">
         <span class="project__tag">Product</span>
         <h3>Resolvary</h3>
-        <p>Contact intelligence: verified work emails at scale, with the verification pipeline doing the quiet work behind the search box.</p>
+        <p>Verified work emails at scale, with the verification pipeline behind the search box.</p>
         <ul class="project__tags"><li>Data</li><li>AI</li><li>Web</li></ul>
         <span class="project__arrow" aria-hidden="true">↗</span>
       </a>
     </div>
   </section>
 
-  <!-- ================= METHOD ================= -->
-  <section class="page band reveal" id="architecture">
-    <div class="band__head">
-      <h2>How a build runs</h2>
-      <p class="sub">Not a chat window. A pipeline with named stages, one owner per stage, and a human gate where a wrong answer is expensive.</p>
-    </div>
+  <div class="px-divider" role="presentation"></div>
 
-    <div class="flow">
+  <!-- ============ METHOD ============ -->
+  <section class="reveal" id="architecture">
+    <h2>How a build runs</h2>
+    <div class="flow px-card">
       <div class="flow__col">
         <span class="label">Inputs</span>
-        <ul class="chips">
-          <li>PDF</li><li>DOCX</li><li>Scans</li><li>Mailbox</li>
-        </ul>
+        <ul class="chips"><li>PDF</li><li>DOCX</li><li>Scans</li><li>Mailbox</li></ul>
       </div>
 
       <span class="flow__arrow" aria-hidden="true">→</span>
@@ -214,9 +132,7 @@
 
       <div class="flow__col">
         <span class="label">Gate</span>
-        <ul class="chips chips--accent">
-          <li>Human review</li><li>Below threshold</li>
-        </ul>
+        <ul class="chips chips--accent"><li>Human review</li><li>Below threshold</li></ul>
         <p class="flow__note">Uncertainty goes to a person. Never to a confident mistake.</p>
       </div>
 
@@ -224,72 +140,66 @@
 
       <div class="flow__col">
         <span class="label">Output</span>
-        <ul class="chips">
-          <li>Structured record</li><li>CRM card</li><li>Audit trail</li>
-        </ul>
+        <ul class="chips"><li>Record</li><li>CRM card</li><li>Audit trail</li></ul>
       </div>
     </div>
   </section>
 
-  <!-- ================= STACK ================= -->
-  <section class="page band reveal" id="stack">
-    <div class="band__head">
-      <h2>Stack</h2>
-      <p class="sub">Boring where it should be boring.</p>
-    </div>
+  <div class="px-divider" role="presentation"></div>
 
-    <ul class="stack__grid">
-      <li data-name="Python"><img src="assets/logos/python.svg" alt="Python" width="30" height="30" loading="lazy"></li>
-      <li data-name="TypeScript"><img src="assets/logos/typescript.svg" alt="TypeScript" width="30" height="30" loading="lazy"></li>
-      <li data-name="Hugging Face"><img src="assets/logos/huggingface.svg" alt="Hugging Face" width="30" height="30" loading="lazy"></li>
-      <li data-name="Node.js"><img src="assets/logos/nodedotjs.svg" alt="Node.js" width="30" height="30" loading="lazy"></li>
-      <li data-name="Docker"><img src="assets/logos/docker.svg" alt="Docker" width="30" height="30" loading="lazy"></li>
-      <li data-name="Linux"><img src="assets/logos/linux.svg" alt="Linux" width="30" height="30" loading="lazy"></li>
-      <li data-name="Git"><img src="assets/logos/git.svg" alt="Git" width="30" height="30" loading="lazy"></li>
-      <li data-name="PostgreSQL"><img src="assets/logos/postgresql.svg" alt="PostgreSQL" width="30" height="30" loading="lazy"></li>
-      <li data-name="Cloudflare"><img src="assets/logos/cloudflare.svg" alt="Cloudflare" width="30" height="30" loading="lazy"></li>
-      <li data-name="Ollama"><img src="assets/logos/ollama.svg" alt="Ollama" width="30" height="30" loading="lazy"></li>
-    </ul>
-    <span class="stack__readout" aria-hidden="true"></span>
+  <!-- ============ STACK ============ -->
+  <section class="reveal" id="stack">
+    <h2>Stack</h2>
+    <div class="px-card">
+      <ul class="stack__grid">
+        <li data-name="Python"><img src="assets/logos/python.svg" alt="Python" width="30" height="30" loading="lazy"></li>
+        <li data-name="TypeScript"><img src="assets/logos/typescript.svg" alt="TypeScript" width="30" height="30" loading="lazy"></li>
+        <li data-name="Hugging Face"><img src="assets/logos/huggingface.svg" alt="Hugging Face" width="30" height="30" loading="lazy"></li>
+        <li data-name="Node.js"><img src="assets/logos/nodedotjs.svg" alt="Node.js" width="30" height="30" loading="lazy"></li>
+        <li data-name="Docker"><img src="assets/logos/docker.svg" alt="Docker" width="30" height="30" loading="lazy"></li>
+        <li data-name="Linux"><img src="assets/logos/linux.svg" alt="Linux" width="30" height="30" loading="lazy"></li>
+        <li data-name="Git"><img src="assets/logos/git.svg" alt="Git" width="30" height="30" loading="lazy"></li>
+        <li data-name="PostgreSQL"><img src="assets/logos/postgresql.svg" alt="PostgreSQL" width="30" height="30" loading="lazy"></li>
+        <li data-name="Cloudflare"><img src="assets/logos/cloudflare.svg" alt="Cloudflare" width="30" height="30" loading="lazy"></li>
+        <li data-name="Ollama"><img src="assets/logos/ollama.svg" alt="Ollama" width="30" height="30" loading="lazy"></li>
+      </ul>
+      <span class="stack__readout" aria-hidden="true"></span>
+    </div>
   </section>
 
-  <!-- ================= PRINCIPLES ================= -->
-  <section class="page band reveal" id="principles">
-    <div class="band__head">
-      <h2>Rules I work by</h2>
-      <p class="sub">Four things that decide the shape of every build.</p>
-    </div>
+  <div class="px-divider" role="presentation"></div>
 
-    <ol class="rules">
-      <li class="px-card">
-        <span class="num">.01</span>
+  <!-- ============ RULES ============ -->
+  <section class="reveal" id="principles">
+    <h2>Rules I work by</h2>
+    <div class="rules">
+      <div class="px-card">
         <h3>Root cause over patches</h3>
-        <p>Three fixes that do not hold mean the model is wrong, not the code. I stop and re-read the architecture.</p>
-      </li>
-      <li class="px-card">
-        <span class="num">.02</span>
+        <p>Three fixes that do not hold mean the model is wrong, not the code.</p>
+      </div>
+      <div class="px-card">
         <h3>Deterministic where it counts</h3>
-        <p>The model reads and classifies. Code assembles and reproduces. The same input gives the same file, every time.</p>
-      </li>
-      <li class="px-card">
-        <span class="num">.03</span>
+        <p>The model reads and classifies. Code assembles and reproduces.</p>
+      </div>
+      <div class="px-card">
         <h3>The human gate is a feature</h3>
-        <p>A system that says “I am not sure” is worth more than one that is always confident and sometimes wrong.</p>
-      </li>
-      <li class="px-card">
-        <span class="num">.04</span>
+        <p>A system that says “I am not sure” beats one that is rarely wrong and always confident.</p>
+      </div>
+      <div class="px-card">
         <h3>Design is part of the system</h3>
-        <p>If the screen hides what the system knows, the architecture failed — no matter how clean the pipeline is.</p>
-      </li>
-    </ol>
+        <p>If the screen hides what the system knows, the architecture failed.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- ================= CONTACT ================= -->
-  <section class="page reveal" id="about">
+  <div class="px-divider" role="presentation"></div>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="reveal" id="about">
     <div class="contact">
       <p class="label">Next</p>
       <h2>Let’s build what’s next.</h2>
-      <p class="contact__sub">An architecture review, a pipeline that has stopped holding, or a product that needs its logic decided before its code — write and describe it in a few lines.</p>
+      <p class="contact__sub">An architecture review, a pipeline that has stopped holding, or a product that needs its logic decided before its code — write a few lines.</p>
       <a class="px-btn px-btn--dark" href="mailto:a.polyakoff07@gmail.com">a.polyakoff07@gmail.com</a>
       <ul class="contact__links">
         <li><a href="https://t.me/lil_ded" target="_blank" rel="noopener">Telegram</a></li>
@@ -298,14 +208,15 @@
       </ul>
     </div>
   </section>
+
 </main>
 
-<footer class="page footer">
+<footer class="wrap footer">
   <span>© <span id="year">2026</span> Alexander Polyakov</span>
   <span class="footer__tag">Architecture · Agents · Automation</span>
 </footer>
 
 <script src="pixel-kit.js" defer></script>
-<script src="main.js?v=3" defer></script>
+<script src="main.js?v=4" defer></script>
 </body>
 </html>
