@@ -6,7 +6,7 @@
    <canvas data-px="planet"></canvas>     dithered rotating planet + orbiting nodes
    <div    data-px="field"></div>         dot grid reacting to cursor / clicks (fills the box)
    <span   data-px="typewriter" data-phrases="Design.|Build.|Scale."></span>
-   <span   data-px-icon="arch"></span>    icons: arch agent llm dev backend product rnd biz
+   <span   data-px-icon="arch"></span>    icons: arch agent llm dev backend product rnd biz design
 
    Colors come from CSS variables (--px-accent etc., see pixel-kit.css).
    Canvases pause when off-screen and render one static frame for prefers-reduced-motion.
@@ -374,7 +374,8 @@
     backend: ['########', '#....#.#', '########', '#....#.#', '########', '#....#.#', '########', '.#....#.'],
     product: ['########', '#..##..#', '#..##..#', '########', '#..##..#', '#..##..#', '#..##..#', '########'],
     rnd:     ['..####..', '...##...', '...##...', '..#..#..', '.#....#.', '#.####.#', '#.####.#', '########'],
-    biz:     ['......##', '......##', '...##.##', '...##.##', '.#.##.##', '.#.##.##', '.#.##.##', '########'],
+    biz:     ['......##', '......##', '...##.##', '...##.##', '##.##.##', '##.##.##', '##.##.##', '########'],
+    design:  ['########', '#......#', '########', '#.#....#', '#.##...#', '#.###..#', '#.####.#', '########'],
   };
   function icon(name) {
     const b = ICONS[name]; if (!b) return '';

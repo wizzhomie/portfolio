@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alexander Polyakov — AI Systems Architect</title>
-<meta name="description" content="AI systems architect. Where a model decides, where code guarantees, and where a person signs off — that split is the product.">
+<title>Alexander Polyakov — AI Systems Engineer</title>
+<meta name="description" content="AI systems engineer. Where a model decides, where code guarantees, and where a person signs off — that split is the product.">
 <meta name="author" content="Alexander Polyakov">
 <meta name="theme-color" content="#04050a">
 <meta name="color-scheme" content="dark">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Alexander Polyakov — AI Systems Architect">
+<meta property="og:title" content="Alexander Polyakov — AI Systems Engineer">
 <meta property="og:description" content="I don’t write prompts. I design systems.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/Inter.ttf" as="font" type="font/ttf" crossorigin>
@@ -17,23 +17,39 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="pixel-kit.css">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 <a class="skip" href="#projects">Skip to work</a>
 
+<!-- ============ TOPBAR ============ -->
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="topbar__name" href="#top">
+      Alexander Polyakov
+      <span>AI systems engineer</span>
+    </a>
+    <nav class="topbar__links" aria-label="Contacts">
+      <a href="mailto:a.polyakoff07@gmail.com">Email</a>
+      <a href="https://t.me/lil_ded" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://www.linkedin.com/in/alexander-polyakov-b66288132/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/wizzhomie" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
 <!-- ============ HERO ============ -->
-<header class="hero" data-px="field">
+<header class="hero" data-px="field" id="top">
   <div class="wrap hero-grid">
     <div class="hero__text">
-      <p class="eyebrow">// ai systems architect</p>
+      <p class="eyebrow">// ai systems engineer</p>
       <h1>
         <span class="line">I don’t write prompts.</span>
         <span class="line line--accent">I design systems.</span>
       </h1>
       <div class="tag"><span data-px="typewriter" data-phrases="Architecture.|Agents.|Automation."></span></div>
-      <p class="sub">Where a model decides, where code guarantees, where a person signs off.</p>
+      <p class="sub">Architecting intelligent products with AI at the core.</p>
       <a class="px-btn" href="#projects">View work</a>
     </div>
 
@@ -56,7 +72,7 @@
       <div class="px-card"><span class="px-icon" data-px-icon="arch" aria-hidden="true"></span><h3>System architecture</h3><p>Boundaries, contracts, failure paths.</p></div>
       <div class="px-card"><span class="px-icon" data-px-icon="agent" aria-hidden="true"></span><h3>Multi-agent delivery</h3><p>One plan, one job per agent, gates I keep.</p></div>
       <div class="px-card"><span class="px-icon" data-px-icon="llm" aria-hidden="true"></span><h3>LLM engineering</h3><p>Schemas, eval sets, cost per document.</p></div>
-      <div class="px-card"><span class="px-icon" data-px-icon="product" aria-hidden="true"></span><h3>Design &amp; interface</h3><p>Layout, type, states, motion.</p></div>
+      <div class="px-card"><span class="px-icon" data-px-icon="design" aria-hidden="true"></span><h3>Design &amp; interface</h3><p>Layout, type, states, motion.</p></div>
       <div class="px-card"><span class="px-icon" data-px-icon="biz" aria-hidden="true"></span><h3>Business logic</h3><p>Routing, approvals, pricing, CRM.</p></div>
       <div class="px-card"><span class="px-icon" data-px-icon="backend" aria-hidden="true"></span><h3>Backend &amp; infra</h3><p>Python, Postgres, queues, Linux.</p></div>
       <div class="px-card"><span class="px-icon" data-px-icon="dev" aria-hidden="true"></span><h3>AI-assisted build</h3><p>Ship faster with agents on a plan.</p></div>
@@ -87,7 +103,7 @@
       </a>
 
       <a class="project px-card" href="https://www.guruexplorer.co" target="_blank" rel="noopener">
-        <span class="project__tag">Product</span>
+        <span class="project__tag">Developer</span>
         <h3>GuruExplorer</h3>
         <p>A trust-first tutor marketplace: verified profiles, transparent reviews, real bookings.</p>
         <ul class="project__tags"><li>Marketplace</li><li>Web</li><li>UX</li></ul>
@@ -95,7 +111,7 @@
       </a>
 
       <a class="project px-card" href="https://resolvary.com" target="_blank" rel="noopener">
-        <span class="project__tag">Product</span>
+        <span class="project__tag">Developer</span>
         <h3>Resolvary</h3>
         <p>Verified work emails at scale, with the verification pipeline behind the search box.</p>
         <ul class="project__tags"><li>Data</li><li>AI</li><li>Web</li></ul>
@@ -112,7 +128,7 @@
     <div class="flow px-card">
       <div class="flow__col">
         <span class="label">Inputs</span>
-        <ul class="chips"><li>PDF</li><li>DOCX</li><li>Scans</li><li>Mailbox</li></ul>
+        <ul class="chips"><li>Task</li><li>Brief</li><li>Sketch</li><li>Existing system</li></ul>
       </div>
 
       <span class="flow__arrow" aria-hidden="true">→</span>
@@ -216,7 +232,7 @@
   <span class="footer__tag">Architecture · Agents · Automation</span>
 </footer>
 
-<script src="pixel-kit.js" defer></script>
+<script src="pixel-kit.js?v=1" defer></script>
 <script src="main.js?v=4" defer></script>
 </body>
 </html>
