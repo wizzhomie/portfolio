@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alexander Polyakov — AI Systems Engineering</title>
-<meta name="description" content="AI systems engineering portfolio: architecture, agents, LLM engineering and product delivery. Design. Build. Scale.">
+<title>Alexander Polyakov — AI Systems Architect</title>
+<meta name="description" content="AI systems architect. I design the structure an AI product needs: where models decide, where code guarantees, and where a human signs off.">
 <meta name="author" content="Alexander Polyakov">
-<meta name="theme-color" content="#04050a">
+<meta name="theme-color" content="#151515">
 <meta name="color-scheme" content="dark">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Alexander Polyakov — AI Systems Engineering">
-<meta property="og:description" content="Architecting intelligent products with AI at the core.">
+<meta property="og:title" content="Alexander Polyakov — AI Systems Architect">
+<meta property="og:description" content="I don't write prompts. I design systems.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/Inter.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="styles.css">
@@ -19,249 +19,205 @@
 <body>
 <a class="skip" href="#projects">Skip to projects</a>
 
-<svg class="sprite" aria-hidden="true" focusable="false">
-  <defs>
-    <linearGradient id="brand-grad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#8fb0ff"/>
-      <stop offset=".5" stop-color="#a78bfa"/>
-      <stop offset="1" stop-color="#6d5bf5"/>
-    </linearGradient>
-  </defs>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
-  <symbol id="i-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
-  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3 7 9 6 9-6"/></symbol>
-  <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></symbol>
-  <symbol id="i-telegram" viewBox="0 0 24 24"><path d="M21.7 4.3 18.8 19c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.24.24-.44.44-.9.44l.33-4.6 8.4-7.6c.36-.32-.08-.5-.56-.18L7.3 13.1l-4.4-1.38c-.96-.3-.98-1-.2-1.32l17-6.56c.8-.3 1.5.19 1.3 1.16Z"/></symbol>
-  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M4.7 3.4a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2ZM2.6 9.9h4.2V21H2.6V9.9Zm6.7 0H13v1.5h.06c.55-1 1.9-2.05 3.9-2.05 4.17 0 4.94 2.75 4.94 6.32V21h-4.2v-4.7c0-1.12-.02-2.56-1.56-2.56-1.56 0-1.8 1.22-1.8 2.48V21H9.3V9.9Z"/></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
-  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2.5"/><rect x="10" y="10" width="4" height="4" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></symbol>
-  <symbol id="i-robot" viewBox="0 0 24 24"><rect x="4.5" y="8" width="15" height="11" rx="3.5"/><path d="M12 8V5"/><circle cx="12" cy="4" r="1.2"/><circle cx="9" cy="13" r="1.2"/><circle cx="15" cy="13" r="1.2"/><path d="M9.5 16.5h5"/></symbol>
-  <symbol id="i-cube" viewBox="0 0 24 24"><path d="m12 2.8 8 4.6v9.2l-8 4.6-8-4.6V7.4l8-4.6Z"/><path d="m4 7.4 8 4.6 8-4.6M12 12v9.2"/></symbol>
-  <symbol id="i-code" viewBox="0 0 24 24"><path d="m8.5 7.5-5 4.5 5 4.5M15.5 7.5l5 4.5-5 4.5"/></symbol>
-  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7.2 18.5h9.6a4.2 4.2 0 0 0 .5-8.37A5.6 5.6 0 0 0 6.6 9.6a4.55 4.55 0 0 0 .6 8.9Z"/></symbol>
-  <symbol id="i-bars" viewBox="0 0 24 24"><path d="M4.5 20V13M12 20V5.5M19.5 20v-9.5"/></symbol>
-  <symbol id="i-pie" viewBox="0 0 24 24"><path d="M21 12A9 9 0 1 1 12 3v9h9Z"/><path d="M16.5 3.6A9 9 0 0 1 20.4 7.5"/></symbol>
-  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3.2c.55 4.6 4.2 8.25 8.8 8.8-4.6.55-8.25 4.2-8.8 8.8-.55-4.6-4.2-8.25-8.8-8.8 4.6-.55 8.25-4.2 8.8-8.8Z"/></symbol>
-  <symbol id="i-diamond" viewBox="0 0 24 24"><path d="M7.5 3.5h9l4.5 5.5-9 11.5L3 9l4.5-5.5Z"/><path d="M3 9h18M12 20.5 8.5 9l2.5-5.5M12 20.5 15.5 9 13 3.5"/></symbol>
-  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.2 2.5 4.5 13.4h6.1l-1.4 8.1 9.3-11.2h-6.2l.9-7.8Z"/></symbol>
-  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><path d="M12 12h.01"/></symbol>
-  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
-  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
-</svg>
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="Alexander Polyakov, home">
+    <span class="brand__mark" aria-hidden="true"></span>
+    <span class="brand__text">
+      <b>Alexander Polyakov</b>
+      <i>AI systems architect</i>
+    </span>
+  </a>
 
-<div class="grain" aria-hidden="true"></div>
+  <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
 
-<main class="bento">
+  <nav class="nav" id="menu" aria-label="Sections">
+    <a href="#expertise">Expertise</a>
+    <a href="#projects">Work</a>
+    <a href="#architecture">Method</a>
+    <a href="#stack">Stack</a>
+    <a class="nav__mail" href="mailto:a.polyakoff07@gmail.com">Write</a>
+  </nav>
+</header>
+
+<main id="top">
 
   <!-- ================= HERO ================= -->
-  <section class="card hero" id="top">
-    <div class="hero__art" aria-hidden="true">
-      <img class="hero__schematic" src="assets/hero-schematic.svg" alt="" width="1400" height="1050" decoding="async">
-      <div class="hero__bloom"></div>
-    </div>
-
-    <header class="nav">
-      <a class="brand" href="#top" aria-label="Alexander Polyakov — home">
-        <svg viewBox="0 0 40 40" aria-hidden="true">
-          <path d="M9.5 32.5C11.6 22 15.4 12.6 20.2 7.2" stroke="url(#brand-grad)" stroke-width="5.2" stroke-linecap="round" fill="none"/>
-          <path d="M20.2 7.2c4.6 5 8.3 13.7 10.3 25.3" stroke="url(#brand-grad)" stroke-width="5.2" stroke-linecap="round" fill="none"/>
-          <path d="M14.6 24.6c3.4-1.3 7-1.5 10.6-.4" stroke="url(#brand-grad)" stroke-width="4.2" stroke-linecap="round" fill="none"/>
-        </svg>
-      </a>
-
-      <nav class="nav__links" id="menu" aria-label="Primary">
-        <a href="#top">Portfolio</a>
-        <a href="#projects">Projects</a>
-        <a href="#stack">Stack</a>
-        <a href="#about">About</a>
-      </nav>
-
-      <a class="nav__gh" href="https://github.com/wizzhomie" target="_blank" rel="noopener">
-        <svg class="ico ico--solid" aria-hidden="true"><use href="#i-github"/></svg>
-        <span>GitHub</span>
-        <svg class="ico ico--arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
-      </a>
-
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
-        <svg class="ico ico--menu" aria-hidden="true"><use href="#i-menu"/></svg>
-        <svg class="ico ico--close" aria-hidden="true"><use href="#i-close"/></svg>
-      </button>
-    </header>
-
-    <div class="hero__content">
-      <h1>AI Systems<br>Engineering</h1>
-      <p class="hero__tagline">Design.&nbsp;Build. <span>Scale.</span></p>
-      <div class="hero__lead">
-        <span class="hero__rule" aria-hidden="true"></span>
-        <p>Architecting intelligent products <br>with AI at the core.</p>
+  <section class="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="page hero__inner">
+      <p class="eyebrow">AI systems architect</p>
+      <h1>
+        <span class="line">I don’t write prompts.</span>
+        <span class="line line--accent">I design systems.</span>
+      </h1>
+      <p class="lede">
+        Where a model decides, where code guarantees, and where a person signs off — that
+        split is the product. I define it, decompose the work across agents, and verify the
+        result until it behaves the same on the hundredth document as on the first.
+      </p>
+      <div class="actions">
+        <a class="btn btn--primary" href="#projects">View selected work</a>
+        <a class="btn btn--ghost" href="mailto:a.polyakoff07@gmail.com">Start a project</a>
       </div>
-      <a class="btn" href="#projects">
-        <span>View Projects</span>
-        <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
-      </a>
+      <ul class="meta">
+        <li><span>Based in</span>Kyiv · remote</li>
+        <li><span>Focus</span>Architecture · agents · automation</li>
+        <li><span>Status</span>Open to projects</li>
+      </ul>
     </div>
   </section>
 
   <!-- ================= EXPERTISE ================= -->
-  <section class="card expertise reveal" id="expertise">
-    <div class="section-head">
-      <h2>Expertise</h2>
-      <p class="sub">Full-cycle approach from idea to scalable product.</p>
+  <section class="page band reveal" id="expertise">
+    <div class="band__head">
+      <h2>What I actually do</h2>
+      <p class="sub">System level first, then everything around it — including the interface and the business rules.</p>
     </div>
-    <ul class="tiles">
-      <li class="tile">
-        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-chip"/></svg></span>
-        <span class="tile__label">AI Systems<br>Architecture</span>
+
+    <ul class="grid grid--4">
+      <li class="card">
+        <span class="num">.01</span>
+        <h3>System architecture</h3>
+        <p>Boundaries, contracts and failure paths. Where the model thinks, where code decides, what happens when the confidence drops.</p>
       </li>
-      <li class="tile">
-        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-robot"/></svg></span>
-        <span class="tile__label">AI Agents &amp;<br>Multi-Agent Systems</span>
+      <li class="card">
+        <span class="num">.02</span>
+        <h3>Multi-agent delivery</h3>
+        <p>Research, build, review and QA agents on one plan, each with one job and a definition of done. I direct them and keep the gates.</p>
       </li>
-      <li class="tile">
-        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-cube"/></svg></span>
-        <span class="tile__label">LLM Engineering<br>&amp; Fine-tuning</span>
+      <li class="card">
+        <span class="num">.03</span>
+        <h3>Document AI</h3>
+        <p>Thousands of Word templates, unseen layouts, structured output. The FormaCV problem, solved once as a pattern.</p>
       </li>
-      <li class="tile">
-        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-code"/></svg></span>
-        <span class="tile__label">AI-Assisted<br>Development</span>
+      <li class="card">
+        <span class="num">.04</span>
+        <h3>LLM engineering</h3>
+        <p>Extraction and classification with schemas, evaluation sets and a cost per document — not a prompt that worked once.</p>
       </li>
-      <li class="tile">
-        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-cloud"/></svg></span>
-        <span class="tile__label">Backend &amp;<br>Infrastructure</span>
+      <li class="card">
+        <span class="num">.05</span>
+        <h3>Interface &amp; motion</h3>
+        <p>Layout, typography, states and animation. I design the screen as part of the system, not as decoration after it.</p>
       </li>
-      <li class="tile">
-        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-bars"/></svg></span>
-        <span class="tile__label">Product<br>Engineering</span>
+      <li class="card">
+        <span class="num">.06</span>
+        <h3>Business logic</h3>
+        <p>Routing rules, approvals, pricing, CRM contracts — and a media-buying background, so the process is not a mystery.</p>
       </li>
-      <li class="tile">
-        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-pie"/></svg></span>
-        <span class="tile__label">R&amp;D &amp; Evaluation</span>
+      <li class="card">
+        <span class="num">.07</span>
+        <h3>Backend &amp; infrastructure</h3>
+        <p>Python, FastAPI, Postgres, queues, Docker, Linux. The parts that must never be clever.</p>
       </li>
-      <li class="tile">
-        <span class="tile__icon"><svg aria-hidden="true" class="ico"><use href="#i-sparkle"/></svg></span>
-        <span class="tile__label">Business<br>&amp; Marketing</span>
+      <li class="card">
+        <span class="num">.08</span>
+        <h3>R&amp;D &amp; evaluation</h3>
+        <p>Proof before scale: benchmarks, regression suites, and root causes instead of another stack of patches.</p>
       </li>
     </ul>
   </section>
 
   <!-- ================= PROJECTS ================= -->
-  <section class="card projects reveal" id="projects">
-    <div class="card__head">
-      <div class="section-head">
-        <h2>Selected Projects</h2>
-        <p class="sub">Real solutions. Measurable impact.</p>
-      </div>
-      <a class="link" href="https://github.com/wizzhomie" target="_blank" rel="noopener">
-        Explore all <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+  <section class="page band reveal" id="projects">
+    <div class="band__head">
+      <h2>Selected work</h2>
+      <p class="sub">Four products, four different problems. In each one the interesting part was the structure.</p>
+    </div>
+
+    <div class="projects">
+      <a class="project" href="https://formacv.ai" target="_blank" rel="noopener">
+        <span class="project__tag">R&amp;D lead</span>
+        <h3>FormaCV</h3>
+        <p>An AI document engine for recruiting agencies: an agency uploads its Word sample, the system extracts the structure, and candidate resumes come out in the agency’s own format.</p>
+        <ul class="project__tags"><li>Document AI</li><li>Multi-agent QA</li><li>SaaS</li></ul>
+        <span class="project__arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="project" href="https://docflow.website" target="_blank" rel="noopener">
+        <span class="project__tag">Architect</span>
+        <h3>DocFlow</h3>
+        <p>Document intake for a business: invoices, acts and scans arrive from a mailbox or a camera, get read whole, confirmed once, and land in the CRM as deals.</p>
+        <ul class="project__tags"><li>Automation</li><li>Python</li><li>CRM</li></ul>
+        <span class="project__arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="project" href="https://www.guruexplorer.co" target="_blank" rel="noopener">
+        <span class="project__tag">Product</span>
+        <h3>GuruExplorer</h3>
+        <p>A trust-first tutor marketplace for Singapore: verified profiles, transparent reviews, and a booking flow that survives real parents.</p>
+        <ul class="project__tags"><li>Marketplace</li><li>Web</li><li>UX</li></ul>
+        <span class="project__arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="project" href="https://resolvary.com" target="_blank" rel="noopener">
+        <span class="project__tag">Product</span>
+        <h3>Resolvary</h3>
+        <p>Contact intelligence: verified work emails at scale, with the verification pipeline doing the quiet work behind the search box.</p>
+        <ul class="project__tags"><li>Data</li><li>AI</li><li>Web</li></ul>
+        <span class="project__arrow" aria-hidden="true">↗</span>
       </a>
     </div>
-
-    <ul class="projects__grid">
-      <li>
-        <a class="project" href="https://formacv.ai" target="_blank" rel="noopener">
-          <div class="thumb thumb--shot thumb--clean" aria-hidden="true">
-            <img src="assets/projects/formacv-card.webp" alt="" width="1400" height="1050" loading="lazy">
-          </div>
-          <h3>FormaCV</h3>
-          <p class="project__desc">AI-powered resume builder &amp; analyzer</p>
-          <span class="project__arrow" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></span>
-          <p class="project__tags">AI · Web · R&amp;D</p>
-        </a>
-      </li>
-      <li>
-        <a class="project" href="https://docflow.website" target="_blank" rel="noopener">
-          <div class="thumb thumb--shot thumb--clean" aria-hidden="true">
-            <img src="assets/projects/docflow-card.webp" alt="" width="1400" height="1050" loading="lazy">
-          </div>
-          <h3>DocFlow</h3>
-          <p class="project__desc">Intelligent document processing system</p>
-          <span class="project__arrow" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></span>
-          <p class="project__tags">AI · Automation</p>
-        </a>
-      </li>
-      <li>
-        <a class="project" href="https://www.guruexplorer.co" target="_blank" rel="noopener">
-          <div class="thumb thumb--shot thumb--clean" aria-hidden="true">
-            <img src="assets/projects/guru-card.webp" alt="" width="1400" height="1050" loading="lazy">
-          </div>
-          <h3>GuruExplorer</h3>
-          <p class="project__desc">Trust-first tutor marketplace for Singapore</p>
-          <span class="project__arrow" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></span>
-          <p class="project__tags">Web · Marketplace</p>
-        </a>
-      </li>
-      <li>
-        <a class="project" href="https://resolvary.com" target="_blank" rel="noopener">
-          <div class="thumb thumb--shot thumb--clean" aria-hidden="true">
-            <img src="assets/projects/resolvary-card.webp" alt="" width="1400" height="1050" loading="lazy">
-          </div>
-          <h3>Resolvary</h3>
-          <p class="project__desc">Contact intelligence — verified work emails</p>
-          <span class="project__arrow" aria-hidden="true"><svg aria-hidden="true" class="ico"><use href="#i-arrow"/></svg></span>
-          <p class="project__tags">Web · Data · AI</p>
-        </a>
-      </li>
-    </ul>
   </section>
 
-  <!-- ================= ARCHITECTURE ================= -->
-  <section class="card arch reveal" id="architecture">
-    <div class="section-head">
-      <h2>Architecture in Action</h2>
-      <p class="sub">Multi-agent system for intelligent document processing.</p>
+  <!-- ================= METHOD ================= -->
+  <section class="page band reveal" id="architecture">
+    <div class="band__head">
+      <h2>How a build runs</h2>
+      <p class="sub">Not a chat window. A pipeline with named stages, one owner per stage, and a human gate where a wrong answer is expensive.</p>
     </div>
 
-    <div class="arch__flow">
-      <ul class="arch__inputs">
-        <li>PDF / DOCX</li>
-        <li>Images</li>
-        <li>Scans</li>
-        <li class="is-other">Other</li>
-      </ul>
-
-      <div class="arch__arrows arch__arrows--in" aria-hidden="true">
-        <svg viewBox="0 0 28 12"><path d="M1 6h22m-5-5 6 5-6 5"/></svg>
-        <svg viewBox="0 0 28 12"><path d="M1 6h22m-5-5 6 5-6 5"/></svg>
-        <svg viewBox="0 0 28 12"><path d="M1 6h22m-5-5 6 5-6 5"/></svg>
+    <div class="flow">
+      <div class="flow__col">
+        <span class="label">Inputs</span>
+        <ul class="chips">
+          <li>PDF</li><li>DOCX</li><li>Scans</li><li>Mailbox</li>
+        </ul>
       </div>
 
-      <div class="pipeline">
-        <svg class="pipeline__icon ico" aria-hidden="true"><use href="#i-robot"/></svg>
-        <span>Multi-Agent<br>Pipeline</span>
+      <span class="flow__arrow" aria-hidden="true">→</span>
+
+      <div class="flow__col">
+        <span class="label">Multi-agent pipeline</span>
+        <ol class="stages">
+          <li><b>.01</b>Research<p>the problem and the edge cases</p></li>
+          <li><b>.02</b>Architect<p>boundaries and contracts</p></li>
+          <li><b>.03</b>Build<p>code and integrations</p></li>
+          <li><b>.04</b>Review<p>an agent that only finds faults</p></li>
+          <li><b>.05</b>QA<p>tests, regressions, visual check</p></li>
+        </ol>
       </div>
 
-      <div class="arch__arrows arch__arrows--out" aria-hidden="true">
-        <svg viewBox="0 0 28 12"><path d="M1 6h22m-5-5 6 5-6 5"/></svg>
-        <svg viewBox="0 0 28 12"><path d="M1 6h22m-5-5 6 5-6 5"/></svg>
-        <svg viewBox="0 0 28 12"><path d="M1 6h22m-5-5 6 5-6 5"/></svg>
-        <svg viewBox="0 0 28 12"><path d="M1 6h22m-5-5 6 5-6 5"/></svg>
+      <span class="flow__arrow" aria-hidden="true">→</span>
+
+      <div class="flow__col">
+        <span class="label">Gate</span>
+        <ul class="chips chips--accent">
+          <li>Human review</li><li>Below threshold</li>
+        </ul>
+        <p class="flow__note">Uncertainty goes to a person. Never to a confident mistake.</p>
       </div>
 
-      <ul class="arch__steps">
-        <li>Analyze</li>
-        <li>Extract</li>
-        <li>Validate</li>
-        <li>Structure</li>
-      </ul>
+      <span class="flow__arrow" aria-hidden="true">→</span>
 
-      <svg class="arch__brace" viewBox="0 0 44 220" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M2 2c14 0 14 104 26 108-12 4-12 108-26 108M28 110h14"/>
-      </svg>
-
-      <div class="arch__out">
-        <span class="arch__check"><svg aria-hidden="true" class="ico"><use href="#i-check"/></svg></span>
-        <span>High-Quality <br>Output</span>
+      <div class="flow__col">
+        <span class="label">Output</span>
+        <ul class="chips">
+          <li>Structured record</li><li>CRM card</li><li>Audit trail</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- ================= STACK ================= -->
-  <section class="card stack reveal" id="stack">
-    <div class="section-head">
-      <h2>Tech Stack</h2>
-      <p class="sub">Modern tools for ambitious ideas.</p>
+  <section class="page band reveal" id="stack">
+    <div class="band__head">
+      <h2>Stack</h2>
+      <p class="sub">Boring where it should be boring.</p>
     </div>
+
     <ul class="stack__grid">
       <li data-name="Python"><img src="assets/logos/python.svg" alt="Python" width="30" height="30" loading="lazy"></li>
       <li data-name="TypeScript"><img src="assets/logos/typescript.svg" alt="TypeScript" width="30" height="30" loading="lazy"></li>
@@ -278,77 +234,56 @@
   </section>
 
   <!-- ================= PRINCIPLES ================= -->
-  <section class="card principles reveal" id="principles">
-    <div class="section-head">
-      <h2>Principles</h2>
-      <p class="sub">Build with purpose.</p>
+  <section class="page band reveal" id="principles">
+    <div class="band__head">
+      <h2>Rules I work by</h2>
+      <p class="sub">Four things that decide the shape of every build.</p>
     </div>
-    <ul class="principles__grid">
+
+    <ol class="rules">
       <li>
-        <span class="principles__icon"><svg aria-hidden="true" class="ico"><use href="#i-diamond"/></svg></span>
-        <span>System<br>Thinking</span>
+        <span class="num">.01</span>
+        <h3>Root cause over patches</h3>
+        <p>Three fixes that do not hold mean the model is wrong, not the code. I stop and re-read the architecture.</p>
       </li>
       <li>
-        <span class="principles__icon"><svg aria-hidden="true" class="ico"><use href="#i-bolt"/></svg></span>
-        <span>Iterative<br>Development</span>
+        <span class="num">.02</span>
+        <h3>Deterministic where it counts</h3>
+        <p>The model reads and classifies. Code assembles and reproduces. The same input gives the same file, every time.</p>
       </li>
       <li>
-        <span class="principles__icon"><svg aria-hidden="true" class="ico"><use href="#i-bars"/></svg></span>
-        <span>Product<br>Focus</span>
+        <span class="num">.03</span>
+        <h3>The human gate is a feature</h3>
+        <p>A system that says “I am not sure” is worth more than one that is always confident and sometimes wrong.</p>
       </li>
       <li>
-        <span class="principles__icon"><svg aria-hidden="true" class="ico"><use href="#i-target"/></svg></span>
-        <span>Long-Term<br>Impact</span>
+        <span class="num">.04</span>
+        <h3>Design is part of the system</h3>
+        <p>If the screen hides what the system knows, the architecture failed — no matter how clean the pipeline is.</p>
       </li>
-    </ul>
+    </ol>
   </section>
 
-  <!-- ================= CTA ================= -->
-  <section class="card cta reveal" id="about">
-    <div class="cta__planet" aria-hidden="true">
-      <img src="assets/earth.jpg" alt="" loading="lazy" width="1280" height="1281">
-    </div>
-
-    <div class="cta__head">
-      <h2>Let&rsquo;s Build<br>What&rsquo;s Next.</h2>
-      <a class="cta__btn" href="mailto:a.polyakoff07@gmail.com" aria-label="Email me">
-        <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
-      </a>
-    </div>
-
-    <div class="cta__contacts">
-      <a href="mailto:a.polyakoff07@gmail.com" aria-label="Email a.polyakoff07@gmail.com">
-        <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
-        <span>a.polyakoff07@gmail.com</span>
-      </a>
-      <a href="https://t.me/lil_ded" target="_blank" rel="noopener" aria-label="Telegram @lil_ded">
-        <svg class="ico ico--solid" aria-hidden="true"><use href="#i-telegram"/></svg>
-        <span>@lil_ded</span>
-      </a>
-      <a href="https://www.linkedin.com/in/alexander-polyakov-b66288132/" target="_blank" rel="noopener me" aria-label="LinkedIn profile">
-        <svg class="ico ico--solid" aria-hidden="true"><use href="#i-linkedin"/></svg>
-        <span>LinkedIn</span>
-      </a>
-      <a href="https://github.com/wizzhomie" target="_blank" rel="noopener" aria-label="GitHub wizzhomie">
-        <svg class="ico ico--solid" aria-hidden="true"><use href="#i-github"/></svg>
-        <span>GitHub</span>
-      </a>
+  <!-- ================= CONTACT ================= -->
+  <section class="page reveal" id="about">
+    <div class="contact">
+      <p class="label">Next</p>
+      <h2>Let’s build what’s next.</h2>
+      <p class="contact__sub">An architecture review, a pipeline that has stopped holding, or a product that needs its logic decided before its code — write and describe it in a few lines.</p>
+      <a class="btn btn--dark" href="mailto:a.polyakoff07@gmail.com">a.polyakoff07@gmail.com</a>
+      <ul class="contact__links">
+        <li><a href="https://t.me/lil_ded" target="_blank" rel="noopener">Telegram</a></li>
+        <li><a href="https://www.linkedin.com/in/alexander-polyakov-b66288132/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/wizzhomie" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
     </div>
   </section>
 </main>
 
-<footer class="foot">
+<footer class="page footer">
   <span>© <span id="year">2026</span> Alexander Polyakov</span>
-  <span class="foot__dot" aria-hidden="true"></span>
-  <span class="foot__tag">Design. Build. Scale.</span>
-  <span class="foot__links">
-    <a href="mailto:a.polyakoff07@gmail.com" aria-label="Email"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></a>
-    <a href="https://t.me/lil_ded" target="_blank" rel="noopener" aria-label="Telegram"><svg class="ico ico--solid" aria-hidden="true"><use href="#i-telegram"/></svg></a>
-    <a href="https://www.linkedin.com/in/alexander-polyakov-b66288132/" target="_blank" rel="noopener me" aria-label="LinkedIn"><svg class="ico ico--solid" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
-    <a href="https://github.com/wizzhomie" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ico ico--solid" aria-hidden="true"><use href="#i-github"/></svg></a>
-  </span>
+  <span class="footer__tag">Architecture · Agents · Automation</span>
 </footer>
-
 
 <script src="main.js" defer></script>
 </body>
