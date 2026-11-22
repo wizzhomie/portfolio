@@ -1,0 +1,124 @@
+/* ==========================================================================
+   pixel-kit.css — pixel-art UI bits for a dark portfolio.
+   Override the variables below to match the site's palette.
+   ========================================================================== */
+:root {
+  --px-bg: #04050a;
+  --px-panel: #0a0d18;
+  --px-ink: #cfd6ee;
+  --px-ink2: #8a94b8;
+  --px-dim: #2a3350;
+  --px-accent: #5ef2d6;   /* main neon */
+  --px-accent2: #ffb86b;  /* "raw data" amber */
+  --px-ok: #7cff8a;       /* "validated" green */
+  --px-font: 'Silkscreen', 'Press Start 2P', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+
+/* ---- canvas base (all canvas components are low-res and scaled up) ---- */
+.px-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+/* ---- cursor-reactive dot field: put data-px="field" on a position:relative box ---- */
+[data-px="field"] { position: relative; }
+.px-field-canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---- visually hidden text for screen readers ---- */
+.px-sr {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* ---- blinking block cursor (typewriter) ---- */
+.px-cursor {
+  display: inline-block; width: .55em; height: 1em; margin-left: .12em;
+  vertical-align: -.12em; background: var(--px-accent);
+  animation: px-blink 1s steps(1) infinite;
+}
+@keyframes px-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+/* ---- pixel icons (SVG injected by JS from 8x8 bitmaps) ---- */
+.px-icon { display: inline-block; width: 32px; height: 32px; color: var(--px-accent); }
+.px-icon svg { display: block; width: 100%; height: 100%; fill: currentColor; shape-rendering: crispEdges; }
+
+/* ---- HUD frame with corner brackets and a label ---- */
+.px-frame {
+  --c: var(--px-accent);
+  position: relative;
+  padding: 16px;
+  background:
+    linear-gradient(var(--c), var(--c)) top left    / 14px 2px no-repeat,
+    linear-gradient(var(--c), var(--c)) top left    / 2px 14px no-repeat,
+    linear-gradient(var(--c), var(--c)) top right   / 14px 2px no-repeat,
+    linear-gradient(var(--c), var(--c)) top right   / 2px 14px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom left / 14px 2px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom left / 2px 14px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom right/ 14px 2px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom right/ 2px 14px no-repeat;
+}
+.px-frame[data-label]::before {
+  content: attr(data-label);
+  position: absolute; top: -7px; left: 22px;
+  padding: 0 6px; background: var(--px-bg);
+  font: 10px/1 var(--px-font); letter-spacing: .08em; color: var(--c);
+}
+
+/* ---- stair-step divider that slowly "crawls" ---- */
+.px-divider {
+  height: 8px; margin: 32px 0;
+  background: linear-gradient(90deg, var(--px-accent), var(--px-accent2));
+  opacity: .55;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='8' shape-rendering='crispEdges'%3E%3Crect y='6' width='4' height='2'/%3E%3Crect x='4' y='4' width='4' height='2'/%3E%3Crect x='8' y='2' width='4' height='2'/%3E%3Crect x='12' width='4' height='2'/%3E%3Crect x='16' y='2' width='4' height='2'/%3E%3Crect x='20' y='4' width='4' height='2'/%3E%3C/svg%3E") repeat-x 0 0 / 24px 8px;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='8' shape-rendering='crispEdges'%3E%3Crect y='6' width='4' height='2'/%3E%3Crect x='4' y='4' width='4' height='2'/%3E%3Crect x='8' y='2' width='4' height='2'/%3E%3Crect x='12' width='4' height='2'/%3E%3Crect x='16' y='2' width='4' height='2'/%3E%3Crect x='20' y='4' width='4' height='2'/%3E%3C/svg%3E") repeat-x 0 0 / 24px 8px;
+  animation: px-crawl 1.6s steps(6) infinite;
+}
+@keyframes px-crawl {
+  from { -webkit-mask-position: 0 0; mask-position: 0 0; }
+  to   { -webkit-mask-position: 24px 0; mask-position: 24px 0; }
+}
+
+/* ---- card with notched pixel corners; border "lights up" on hover ---- */
+.px-card {
+  --n: 6px;
+  position: relative; padding: 20px; color: var(--px-ink);
+  background: var(--px-panel);
+  box-shadow: inset 0 0 0 2px var(--px-dim);
+  clip-path: polygon(
+    0 var(--n), var(--n) var(--n), var(--n) 0,
+    calc(100% - var(--n)) 0, calc(100% - var(--n)) var(--n), 100% var(--n),
+    100% calc(100% - var(--n)), calc(100% - var(--n)) calc(100% - var(--n)), calc(100% - var(--n)) 100%,
+    var(--n) 100%, var(--n) calc(100% - var(--n)), 0 calc(100% - var(--n)));
+  transition: box-shadow .12s steps(2), transform .12s steps(2);
+}
+.px-card::after {
+  content: ""; position: absolute; top: 10px; right: 10px; width: 4px; height: 4px;
+  background: var(--px-dim);
+}
+.px-card:hover { box-shadow: inset 0 0 0 2px var(--px-accent); transform: translate(-2px, -2px); }
+.px-card:hover::after { background: var(--px-accent); animation: px-blink .6s steps(1) infinite; }
+.px-card:hover .px-icon { animation: px-pop .4s steps(3) 1; }
+@keyframes px-pop { 0% { transform: translateY(0); } 33% { transform: translateY(-4px); } 66% { transform: translateY(2px); } 100% { transform: translateY(0); } }
+
+/* ---- button with hard pixel shadow ---- */
+.px-btn {
+  display: inline-block; padding: 12px 18px; cursor: pointer;
+  font: 12px/1 var(--px-font); letter-spacing: .08em; text-transform: uppercase; text-decoration: none;
+  color: var(--px-bg); background: var(--px-accent); border: 0;
+  box-shadow: 4px 4px 0 var(--px-accent2);
+  transition: transform .08s steps(1), box-shadow .08s steps(1);
+}
+.px-btn:hover, .px-btn:focus-visible { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--px-accent2); }
+.px-btn:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--px-accent2); }
+
+@media (prefers-reduced-motion: reduce) {
+  .px-cursor, .px-divider, .px-card, .px-card:hover::after, .px-card:hover .px-icon { animation: none !important; transition: none !important; }
+}

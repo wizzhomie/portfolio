@@ -13,7 +13,11 @@
 <meta property="og:description" content="I don't write prompts. I design systems.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/Inter.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pixel-kit.css">
+<link rel="stylesheet" href="styles.css?v=3">
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
@@ -44,22 +48,30 @@
 <main id="top">
 
   <!-- ================= HERO ================= -->
-  <section class="hero">
+  <section class="hero" data-px="field">
     <div class="hero__glow" aria-hidden="true"></div>
     <div class="page hero__inner">
-      <p class="eyebrow">AI systems architect</p>
-      <h1>
-        <span class="line">I don’t write prompts.</span>
-        <span class="line line--accent">I design systems.</span>
-      </h1>
-      <p class="lede">
-        Where a model decides, where code guarantees, and where a person signs off — that
-        split is the product. I define it, decompose the work across agents, and verify the
-        result until it behaves the same on the hundredth document as on the first.
-      </p>
-      <div class="actions">
-        <a class="btn btn--primary" href="#projects">View selected work</a>
-        <a class="btn btn--ghost" href="mailto:a.polyakoff07@gmail.com">Start a project</a>
+      <div class="hero__text">
+        <p class="eyebrow">AI systems architect</p>
+        <h1>
+          <span class="line">I don’t write prompts.</span>
+          <span class="line line--accent">I design systems.</span>
+        </h1>
+        <p class="hero__tag"><span data-px="typewriter" data-phrases="Architecture.|Agents.|Automation."></span></p>
+        <p class="lede">
+          Where a model decides, where code guarantees, and where a person signs off — that
+          split is the product. I define it, decompose the work across agents, and verify the
+          result until it behaves the same on the hundredth document as on the first.
+        </p>
+        <div class="actions">
+          <a class="btn btn--primary" href="#projects">View selected work</a>
+          <a class="btn btn--ghost" href="mailto:a.polyakoff07@gmail.com">Start a project</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="px-frame" data-label="pipeline.live">
+          <canvas data-px="pipeline" role="img" aria-label="Pixel animation: documents move through analyse, extract and validate agents and come out as structured records"></canvas>
+        </div>
       </div>
       <ul class="meta">
         <li><span>Based in</span>Kyiv · remote</li>
@@ -78,49 +90,49 @@
 
     <ul class="grid grid--4">
       <li class="card">
-        <svg class="art" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path class="a" d="M5 3h6v1h-6zM5 4h6v1h-6zM5 5h6v1h-6z"/><path class="w" d="M8 6h1v1h-1zM8 7h1v1h-1zM4 8h9v1h-9zM4 9h1v1h-1zM12 9h1v1h-1zM2 10h4v1h-4zM10 10h4v1h-4zM2 11h4v1h-4zM10 11h4v1h-4zM2 12h4v1h-4zM10 12h4v1h-4z"/><path class="d" d="M2 1h12v1h-12zM2 2h1v1h-1zM13 2h1v1h-1zM2 3h1v1h-1zM13 3h1v1h-1zM2 4h1v1h-1zM13 4h1v1h-1zM2 5h1v1h-1zM13 5h1v1h-1zM2 6h1v1h-1zM13 6h1v1h-1zM2 7h1v1h-1zM13 7h1v1h-1zM2 8h1v1h-1zM13 8h1v1h-1zM2 9h1v1h-1zM13 9h1v1h-1zM2 13h1v1h-1zM13 13h1v1h-1zM2 14h12v1h-12z"/></svg>
+        <span class="px-icon" data-px-icon="arch" aria-hidden="true"></span>
         <span class="num">.01</span>
         <h3>System architecture</h3>
         <p>Boundaries, contracts and failure paths. Where the model thinks, where code decides, what happens when the confidence drops.</p>
       </li>
       <li class="card">
-        <svg class="art" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path class="a" d="M6 6h4v1h-4zM6 7h4v1h-4zM6 8h4v1h-4zM6 9h4v1h-4z"/><path class="w" d="M1 1h3v1h-3zM12 1h3v1h-3zM1 2h3v1h-3zM12 2h3v1h-3zM1 3h3v1h-3zM12 3h3v1h-3zM1 12h3v1h-3zM12 12h3v1h-3zM1 13h3v1h-3zM12 13h3v1h-3zM1 14h3v1h-3zM12 14h3v1h-3z"/><path class="d" d="M4 4h1v1h-1zM11 4h1v1h-1zM5 5h1v1h-1zM10 5h1v1h-1zM5 10h1v1h-1zM10 10h1v1h-1zM4 11h1v1h-1zM11 11h1v1h-1z"/></svg>
+        <span class="px-icon" data-px-icon="agent" aria-hidden="true"></span>
         <span class="num">.02</span>
         <h3>Multi-agent delivery</h3>
         <p>Research, build, review and QA agents on one plan, each with one job and a definition of done. I direct them and keep the gates.</p>
       </li>
       <li class="card">
-        <svg class="art" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path class="a" d="M1 1h2v1h-2zM13 1h2v1h-2zM1 2h2v1h-2zM13 2h2v1h-2zM5 4h6v1h-6zM1 13h2v1h-2zM13 13h2v1h-2zM1 14h2v1h-2zM13 14h2v1h-2z"/><path class="w" d="M3 1h10v1h-10zM3 2h1v1h-1zM12 2h1v1h-1zM3 3h1v1h-1zM12 3h1v1h-1zM3 4h1v1h-1zM12 4h1v1h-1zM3 5h1v1h-1zM12 5h1v1h-1zM3 6h1v1h-1zM12 6h1v1h-1zM3 7h1v1h-1zM12 7h1v1h-1zM3 8h1v1h-1zM12 8h1v1h-1zM3 9h1v1h-1zM12 9h1v1h-1zM3 10h1v1h-1zM12 10h1v1h-1zM3 11h1v1h-1zM12 11h1v1h-1zM3 12h1v1h-1zM12 12h1v1h-1zM3 13h1v1h-1zM12 13h1v1h-1zM3 14h10v1h-10z"/><path class="d" d="M5 6h6v1h-6zM5 8h6v1h-6zM5 10h4v1h-4zM5 12h4v1h-4z"/></svg>
+        <span class="px-icon" data-px-icon="dev" aria-hidden="true"></span>
         <span class="num">.03</span>
         <h3>Document AI</h3>
         <p>Thousands of Word templates, unseen layouts, structured output. The FormaCV problem, solved once as a pattern.</p>
       </li>
       <li class="card">
-        <svg class="art" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path class="a" d="M5 5h1v1h-1zM7 5h1v1h-1zM9 5h1v1h-1z"/><path class="w" d="M2 2h12v1h-12zM2 3h1v1h-1zM13 3h1v1h-1zM2 4h1v1h-1zM13 4h1v1h-1zM2 5h1v1h-1zM13 5h1v1h-1zM2 6h1v1h-1zM13 6h1v1h-1zM2 7h1v1h-1zM13 7h1v1h-1zM2 8h1v1h-1zM13 8h1v1h-1zM2 9h12v1h-12zM4 10h1v1h-1zM4 11h2v1h-2z"/><path class="d" d="M5 7h1v1h-1zM7 7h1v1h-1z"/></svg>
+        <span class="px-icon" data-px-icon="llm" aria-hidden="true"></span>
         <span class="num">.04</span>
         <h3>LLM engineering</h3>
         <p>Extraction and classification with schemas, evaluation sets and a cost per document — not a prompt that worked once.</p>
       </li>
       <li class="card">
-        <svg class="art" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path class="a" d="M3 3h3v1h-3zM7 5h1v1h-1zM7 6h2v1h-2zM7 7h3v1h-3zM7 8h4v1h-4zM7 9h3v1h-3zM7 10h1v1h-1zM9 10h1v1h-1z"/><path class="w" d="M1 2h11v1h-11zM1 3h1v1h-1zM11 3h1v1h-1zM1 4h1v1h-1zM11 4h1v1h-1zM1 5h1v1h-1zM11 5h1v1h-1zM1 6h1v1h-1zM11 6h1v1h-1zM1 7h1v1h-1zM11 7h1v1h-1zM1 8h1v1h-1zM11 8h1v1h-1zM1 9h1v1h-1zM11 9h1v1h-1zM1 10h6v1h-6zM8 10h1v1h-1zM10 10h2v1h-2z"/><path class="d" d="M3 6h3v1h-3zM3 8h2v1h-2z"/></svg>
+        <span class="px-icon" data-px-icon="product" aria-hidden="true"></span>
         <span class="num">.05</span>
         <h3>Interface &amp; motion</h3>
         <p>Layout, typography, states and animation. I design the screen as part of the system, not as decoration after it.</p>
       </li>
       <li class="card">
-        <svg class="art" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path class="a" d="M7 1h1v1h-1zM6 2h3v1h-3zM5 3h5v1h-5zM4 4h7v1h-7zM5 5h5v1h-5zM6 6h3v1h-3zM7 7h1v1h-1zM1 12h4v1h-4zM1 13h4v1h-4zM1 14h4v1h-4z"/><path class="w" d="M7 8h1v1h-1zM7 9h1v1h-1zM4 10h7v1h-7z"/><path class="d" d="M3 10h1v1h-1zM11 10h1v1h-1zM3 11h1v1h-1zM11 11h1v1h-1zM10 12h4v1h-4zM10 13h4v1h-4zM10 14h4v1h-4z"/></svg>
+        <span class="px-icon" data-px-icon="biz" aria-hidden="true"></span>
         <span class="num">.06</span>
         <h3>Business logic</h3>
         <p>Routing rules, approvals, pricing, CRM contracts — and a media-buying background, so the process is not a mystery.</p>
       </li>
       <li class="card">
-        <svg class="art" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path class="a" d="M11 3h1v1h-1zM11 8h1v1h-1zM11 13h1v1h-1z"/><path class="w" d="M2 2h12v1h-12zM2 3h1v1h-1zM13 3h1v1h-1zM2 4h12v1h-12zM2 7h12v1h-12zM2 8h1v1h-1zM13 8h1v1h-1zM2 9h12v1h-12zM2 12h12v1h-12zM2 13h1v1h-1zM13 13h1v1h-1zM2 14h12v1h-12z"/><path class="d" d="M4 3h5v1h-5zM4 8h5v1h-5zM4 13h5v1h-5z"/></svg>
+        <span class="px-icon" data-px-icon="backend" aria-hidden="true"></span>
         <span class="num">.07</span>
         <h3>Backend &amp; infrastructure</h3>
         <p>Python, FastAPI, Postgres, queues, Docker, Linux. The parts that must never be clever.</p>
       </li>
       <li class="card">
-        <svg class="art" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path class="a" d="M6 5h3v1h-3zM6 6h3v1h-3zM6 7h3v1h-3zM6 8h3v1h-3zM6 9h3v1h-3zM6 10h3v1h-3zM6 11h3v1h-3zM6 12h3v1h-3zM6 13h3v1h-3z"/><path class="w" d="M10 1h4v1h-4zM9 2h1v1h-1zM14 2h1v1h-1zM9 3h1v1h-1zM14 3h1v1h-1zM9 4h1v1h-1zM14 4h1v1h-1zM9 5h1v1h-1zM14 5h1v1h-1zM10 6h4v1h-4zM15 7h1v1h-1zM3 8h3v1h-3zM3 9h3v1h-3zM3 10h3v1h-3zM0 11h6v1h-6zM0 12h6v1h-6zM0 13h6v1h-6z"/><path class="d" d="M0 14h16v1h-16z"/></svg>
+        <span class="px-icon" data-px-icon="rnd" aria-hidden="true"></span>
         <span class="num">.08</span>
         <h3>R&amp;D &amp; evaluation</h3>
         <p>Proof before scale: benchmarks, regression suites, and root causes instead of another stack of patches.</p>
@@ -293,6 +305,7 @@
   <span class="footer__tag">Architecture · Agents · Automation</span>
 </footer>
 
-<script src="main.js?v=2" defer></script>
+<script src="pixel-kit.js" defer></script>
+<script src="main.js?v=3" defer></script>
 </body>
 </html>
