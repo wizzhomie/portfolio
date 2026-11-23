@@ -1,3 +1,9 @@
 ref/
 shots/
 HANDOFF.md
+
+# Agent instruction files are private to the machine: never committed.
+AGENTS.md
+CLAUDE.md
+AGENTS.local.md
+CLAUDE.local.md
